@@ -1,0 +1,4149 @@
+{
+  "period": {
+    "start": "2026-04-17",
+    "end": "2026-04-24"
+  },
+  "generated_at": "2026-04-24T22:56:33Z",
+  "repo": "BlueRiverTechnology/brt",
+  "summary": {
+    "total_merged": 254,
+    "total_open": 135,
+    "team_count": 8,
+    "avg_days_to_merge": 10.1,
+    "highlights": [
+      "Shasta shipped BSP 3.2.1 across both VPU platforms and merged 124 PRs \u2014 the most active team this week.",
+      "Jupiter optimized the Gretzky depth model pipeline with windowed disparity regression and curated stereo pseudo-GT improvements.",
+      "Infrastructure migrated core third-party dependencies (gRPC, protobuf, gtest, jsoncpp) to bzlmod, modernizing the build system."
+    ]
+  },
+  "teams": [
+    {
+      "id": "shasta",
+      "name": "Shasta",
+      "description": "See & Spray platform",
+      "merged_count": 124,
+      "open_count": 63,
+      "avg_days_to_merge": 13.6,
+      "median_days_to_merge": 5.3,
+      "summary": "Shasta shipped BSP 3.2.1 for VPU1 and VPU2, hardened diagnostic and camera firmware test suites, and improved raven upload reliability. Weed pressure logic was refined for variable-rate mode, and several Buildkite CI improvements landed.",
+      "merged": [
+        {
+          "number": 11620,
+          "title": "fix: Updating Buildkite parameter (2nd attempt)",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11620",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11614,
+          "title": "buildkite: Git mirrors paramter for elastic stack",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11614",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.0
+        },
+        {
+          "number": 11593,
+          "title": "shasta: Fix DiagnosticAggregatorVpu2Test.NamedCameraSaSConfiguration2",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11593",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.0
+        },
+        {
+          "number": 11571,
+          "title": "shark: Handle hanging Active Model AOS calls",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11571",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.0
+        },
+        {
+          "number": 11556,
+          "title": "PRO-19807: Remove obsolete ingest_machine_logs.py",
+          "author": "kevinkreher-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11556",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.1
+        },
+        {
+          "number": 11538,
+          "title": "shasta: raven upload checks response status",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11538",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.9
+        },
+        {
+          "number": 11537,
+          "title": "shark: Fix baker-fb1.ini file",
+          "author": "brt-Yuchun-Liu",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11537",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11535,
+          "title": "shark: fix CameraFirmwareVersionMismatch test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11535",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11530,
+          "title": "SHARK: Update pufferfish to 0.3.6",
+          "author": "Y3S7JGE-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11530",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11528,
+          "title": "shasta: BSP 3.2.1 (VPU1 & VPU2)",
+          "author": "brt-brennan-coslett",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11528",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.1
+        },
+        {
+          "number": 11520,
+          "title": "Fix return value of vpu_slot_order.",
+          "author": "brt-brian-smartt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11520",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.7
+        },
+        {
+          "number": 11519,
+          "title": "shasta: Disable weed pressure in Variable Rate mode (#10268)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11519",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.6
+        },
+        {
+          "number": 11518,
+          "title": "shasta: Extract MakeDocLog into separate library and refactor BiomassHistogram (no-op) (#10285)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11518",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.6
+        },
+        {
+          "number": 11512,
+          "title": "shasta: Rewrite boomtrac_mode_module_test.cc (#11511)",
+          "author": "kiran-mohan-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11512",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11511,
+          "title": "shasta: Rewrite boomtrac_mode_module_test.cc",
+          "author": "kiran-mohan-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11511",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11501,
+          "title": "shasta: Give devin access to the github MCP server",
+          "author": "philsc",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11501",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11500,
+          "title": "shasta: Separate --output_base locations for CI configurations",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11500",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11491,
+          "title": "fix: Bootstrap dl-core-seedling with Artifactory credential",
+          "author": "mrmod",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11491",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11483,
+          "title": "shasta: Fix realtime malloc in capabilities watcher path (#11374)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11483",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.4
+        },
+        {
+          "number": 11481,
+          "title": "shasta: Clean up flatbuffer copy in see_and_spray_capabilities_parameters_module.cc",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11481",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11480,
+          "title": "shasta: Clean up realtime-check enablement in see_and_spray_capabilities_parameters_module_test.cc",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11480",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11479,
+          "title": "aos: Make SimulatedSender::DoSend handle realtime checks correctly",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11479",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11473,
+          "title": "shasta: Fix CHECK failure during op check with non-S&S nozzle geometry (#11396)",
+          "author": "brt-Naman-Gupta",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11473",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 2.1
+        },
+        {
+          "number": 11467,
+          "title": "shasta: flash_vpu: add EFI major version check",
+          "author": "brt-sarah-newman",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11467",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 2.2
+        },
+        {
+          "number": 11466,
+          "title": "shasta: flash_vpu2: prevent ratchet downgrade",
+          "author": "brt-sarah-newman",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11466",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 2.1
+        },
+        {
+          "number": 11463,
+          "title": "shasta: shark: prompt_utilities enhancements",
+          "author": "richbiggs",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11463",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 2.8
+        },
+        {
+          "number": 11437,
+          "title": "shasta: fix gazelle scan",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11437",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.3
+        },
+        {
+          "number": 11430,
+          "title": "Add wireguard DNS for baker-lpb21",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11430",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.5
+        },
+        {
+          "number": 11415,
+          "title": "shasta: Add rev7 VPU1 support",
+          "author": "brt-sarah-newman",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11415",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 3.3
+        },
+        {
+          "number": 11414,
+          "title": "shasta: update_vpu_artifacts: use dev-signed BSP if available",
+          "author": "brt-sarah-newman",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11414",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 3.2
+        },
+        {
+          "number": 11405,
+          "title": "robotech: shark: Don't wait to run command the first time",
+          "author": "sanjaynarayanan-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11405",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.9
+        },
+        {
+          "number": 11398,
+          "title": "shasta: Fix decreasing linear gradient in VRSetupPlanner (#11373)",
+          "author": "brt-Naman-Gupta",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11398",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 4.7
+        },
+        {
+          "number": 11397,
+          "title": "Resolve VR OpCheck type using nozzle tip (#10983)",
+          "author": "brt-Naman-Gupta",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11397",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 4.7
+        },
+        {
+          "number": 11396,
+          "title": "shasta: Fix CHECK failure during op check with non-S&S nozzle geometry",
+          "author": "brt-Naman-Gupta",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11396",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 3.1
+        },
+        {
+          "number": 11395,
+          "title": "shasta: Add support for canopy mode in Gen2 systems (#8363) (#10057)",
+          "author": "kiran-mohan-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11395",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 4.8
+        },
+        {
+          "number": 11388,
+          "title": "shasta: Fix for concurrent access to log records (#11296)",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11388",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11383,
+          "title": "shasta: Reduce diff between Shasta Build & Release pipelines",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11383",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 3.0
+        },
+        {
+          "number": 11382,
+          "title": "shark: ECU Test boom height package path",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11382",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11377,
+          "title": "shasta: Enable variable rate for PUK 1.0 FC configs",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11377",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11376,
+          "title": "shasta: Add a basic devin config for accessing Jira",
+          "author": "philsc",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11376",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11374,
+          "title": "shasta: Fix realtime malloc in capabilities watcher path",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11374",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 3.9
+        },
+        {
+          "number": 11373,
+          "title": "shasta: Fix decreasing linear gradient in VRSetupPlanner",
+          "author": "brt-Naman-Gupta",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11373",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.3
+        },
+        {
+          "number": 11372,
+          "title": "Bypass nozzle longitudinal buffers if opcheck is active",
+          "author": "randy-schur-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11372",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 3.0
+        },
+        {
+          "number": 11371,
+          "title": "shasta: Shard vr_opcheck_planner_test for parallel execution",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11371",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.3
+        },
+        {
+          "number": 11367,
+          "title": "robotech: Update BSP Release notes script",
+          "author": "brt-brennan-coslett",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11367",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 2.9
+        },
+        {
+          "number": 11364,
+          "title": "shasta: Force NO_SPRAY fallback during VR operational check (#11291)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11364",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 6.1
+        },
+        {
+          "number": 11363,
+          "title": "shasta: Consolidate test rig exclusions using ExcludeTestRigs() (#9643)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11363",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.1
+        },
+        {
+          "number": 11362,
+          "title": "fix: CORS for bsp-signer and equipment-signer",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11362",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 6.1
+        },
+        {
+          "number": 11351,
+          "title": "Bypass nozzle longitudinal buffers if opcheck is active",
+          "author": "randy-schur-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11351",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11350,
+          "title": "shasta: Fix VSP op-check fallback from nozzle-centered unknown (#11073)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11350",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 6.0
+        },
+        {
+          "number": 11349,
+          "title": "shasta: Register NamedRequestWithTwoCmdBytes in CAN translator (#11019)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11349",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.8
+        },
+        {
+          "number": 11348,
+          "title": "shasta: Fix nozzle range computation in NozzleCommandsToTable (#7065)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11348",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 6.0
+        },
+        {
+          "number": 11347,
+          "title": "shasta: Account for BHS sensor height offset in HLPM min (#10523)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11347",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.9
+        },
+        {
+          "number": 11346,
+          "title": "shasta: Unify VR activation to prioritize DA over config (#10870)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11346",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.9
+        },
+        {
+          "number": 11345,
+          "title": "shasta: Use see_and_spray_config_information_ in MaxHeightOverride (#10610)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11345",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.9
+        },
+        {
+          "number": 11344,
+          "title": "shasta: Consolidate planner running flags into ParameterModuleContext (#10607)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11344",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.8
+        },
+        {
+          "number": 11335,
+          "title": "shasta: Add ConfigListSender::BuildDetachedList helper (#10229)",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11335",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.8
+        },
+        {
+          "number": 11327,
+          "title": "shasta: update gosdk to 1.26.2",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11327",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 6.1
+        },
+        {
+          "number": 11325,
+          "title": "Phelps MY27 SOP 40k20i (#11139)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11325",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.4
+        },
+        {
+          "number": 11324,
+          "title": "Phelps MY27 SOP 40k15i (#11138)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11324",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11323,
+          "title": "Phelps MY27 SOP 40k20e (#11137)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11323",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11322,
+          "title": "Phelps MY27 SOP 40k15e (#11136)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11322",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11321,
+          "title": "Phelps MY27 SOP 36k20i (#11135)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11321",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11320,
+          "title": "Phelps MY27 SOP 36k15i (#11134)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11320",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11318,
+          "title": "Phelps MY27 SOP 36k20e (#11133)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11318",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11317,
+          "title": "Phelps MY27 SOP 36k15e (#11132)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11317",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11313,
+          "title": "Phelps MY27 SOP 30k20i (#11131)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11313",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11310,
+          "title": "Phelps MY27 SOP 30k15i (#10293)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11310",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.3
+        },
+        {
+          "number": 11309,
+          "title": "Phelps MY27 SOP 30k20e (#10292)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11309",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.2
+        },
+        {
+          "number": 11308,
+          "title": "Phelps MY27 SOP 30k15e (#10279)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11308",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.2
+        },
+        {
+          "number": 11301,
+          "title": "Update baseline of the RSW SAM run to account for post detection filter running.",
+          "author": "randy-schur-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11301",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.2
+        },
+        {
+          "number": 11300,
+          "title": "shark: Update compute controller plugin",
+          "author": "Y3S7JGE-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11300",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 4.5
+        },
+        {
+          "number": 11296,
+          "title": "shasta: Fix for concurrent access to log records",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11296",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.6
+        },
+        {
+          "number": 11293,
+          "title": "Add the ClusterInstance class",
+          "author": "brt-brian-smartt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11293",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.8
+        },
+        {
+          "number": 11291,
+          "title": "shasta: Force NO_SPRAY fallback during VR operational check",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11291",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.6
+        },
+        {
+          "number": 11290,
+          "title": "Baker MY27 SOP 36g15e (#10227)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11290",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.9
+        },
+        {
+          "number": 11289,
+          "title": "Baker MY27 SOP 36a15i (#10217)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11289",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.9
+        },
+        {
+          "number": 11288,
+          "title": "Baker MY27 SOP 36a15e (#10174)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11288",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.9
+        },
+        {
+          "number": 11286,
+          "title": "Baker MY27 SOP 36a20e (#10172)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11286",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.7
+        },
+        {
+          "number": 11285,
+          "title": "Speed up instance clustering",
+          "author": "brt-brian-smartt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11285",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.6
+        },
+        {
+          "number": 11284,
+          "title": "Baker MY27 SOP 30a20i (#10168)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11284",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.7
+        },
+        {
+          "number": 11283,
+          "title": "Baker MY27 SOP 36a20i (#10114)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11283",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.7
+        },
+        {
+          "number": 11280,
+          "title": "Baker MY27 SOP 30a20e (#10096)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11280",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.7
+        },
+        {
+          "number": 11278,
+          "title": "Baker MY27 SOP 30a15i (#10000)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11278",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 5.7
+        },
+        {
+          "number": 11269,
+          "title": "Add image stats to spyglass selected image panel (#10898)",
+          "author": "brian-griglak",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11269",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.8
+        },
+        {
+          "number": 11267,
+          "title": "shasta: Remove default cases and add full coverage in nozzle mapping tests (#11028)",
+          "author": "brt-Naman-Gupta",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11267",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.9
+        },
+        {
+          "number": 11181,
+          "title": "shasta: Tune down VPU2 camera message frequencies",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11181",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 7.2
+        },
+        {
+          "number": 11170,
+          "title": "Baker MY27 SOP 30a15e (#9948)",
+          "author": "rajshah-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11170",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 7.1
+        },
+        {
+          "number": 11157,
+          "title": "Redirect rules for internal .com to .info domains",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11157",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 3.9
+        },
+        {
+          "number": 11079,
+          "title": "Remove deleted modules and update README",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11079",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 13.8
+        },
+        {
+          "number": 11061,
+          "title": "Refactor terraform module intranet_website using ALB",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11061",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 7.8
+        },
+        {
+          "number": 11033,
+          "title": "Update lambda go runtime",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11033",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 8.7
+        },
+        {
+          "number": 10999,
+          "title": "Remap new lighting channel to avoid crash",
+          "author": "brian-griglak",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10999",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 10.1
+        },
+        {
+          "number": 10946,
+          "title": "shark: InstallHarvey test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10946",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 14.8
+        },
+        {
+          "number": 10939,
+          "title": "shark: automate BugReportManualValidation",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10939",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 14.9
+        },
+        {
+          "number": 10861,
+          "title": "shark: LPB21 config file for shark",
+          "author": "brt-Yuchun-Liu",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10861",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 21.0
+        },
+        {
+          "number": 10844,
+          "title": "shark: Add the ability to flash the compute controllers",
+          "author": "Y3S7JGE-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10844",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 19.8
+        },
+        {
+          "number": 10815,
+          "title": "SHARK: Allow the comp_ctrl revision to be overridden from config",
+          "author": "Y3S7JGE-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10815",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 20.0
+        },
+        {
+          "number": 10751,
+          "title": "shasta: automate VerifyDisplayIsGettingCalibrationUpdates SHARK test",
+          "author": "W7NIIIF-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10751",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 22.8
+        },
+        {
+          "number": 10740,
+          "title": "Shasta: add CAN mux configs for B202 in shark",
+          "author": "omarmanzano-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10740",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 23.0
+        },
+        {
+          "number": 10734,
+          "title": "shasta: move api functions to own file",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10734",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 22.3
+        },
+        {
+          "number": 10726,
+          "title": "shasta: Move MTG operations into own file",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10726",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 22.1
+        },
+        {
+          "number": 10703,
+          "title": "shasta: Move MTG services to own file",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10703",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 22.8
+        },
+        {
+          "number": 10702,
+          "title": "bumblebee: Update dataset creation script to merge with previous datasets if provided",
+          "author": "rakhil575",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10702",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "days_open": 17.8
+        },
+        {
+          "number": 10693,
+          "title": "shasta: Refactor MTG client, move handlers code to own file",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10693",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 22.2
+        },
+        {
+          "number": 10647,
+          "title": "shark: adk: Add basic startup test",
+          "author": "brt-brennan-coslett",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10647",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 25.2
+        },
+        {
+          "number": 10566,
+          "title": "Adapt session_digest to interpret the new digest content.",
+          "author": "brt-brian-smartt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10566",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 26.1
+        },
+        {
+          "number": 10563,
+          "title": "shasta: add CombinedSWFaults SHARK test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10563",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 27.9
+        },
+        {
+          "number": 10562,
+          "title": "shasta: add RecoveryBooted SHARK test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10562",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 27.8
+        },
+        {
+          "number": 10519,
+          "title": "shasta: [Sampleverse] annotations dab",
+          "author": "brt-henry",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10519",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 27.8
+        },
+        {
+          "number": 10464,
+          "title": "shasta: Respond to RequestWithCmdByte for height limits",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10464",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 23.1
+        },
+        {
+          "number": 10268,
+          "title": "shasta: Disable weed pressure in Variable Rate mode",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10268",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 33.3
+        },
+        {
+          "number": 10071,
+          "title": "aerial: rule to push value to AWS secret",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10071",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 38.0
+        },
+        {
+          "number": 10057,
+          "title": "shasta: Add support for canopy mode in Gen2 systems (#8363)",
+          "author": "kiran-mohan-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10057",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 39.2
+        },
+        {
+          "number": 9956,
+          "title": "aos: Add test to validate that logger_test exercises async codepaths",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/9956",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 36.1
+        },
+        {
+          "number": 9558,
+          "title": "shasta: improve output of wing tests",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/9558",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 51.2
+        },
+        {
+          "number": 9542,
+          "title": "bumblebee: Implementation to parse observation states with offset time.  ",
+          "author": "SanjayKV-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/9542",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "days_open": 51.1
+        },
+        {
+          "number": 8803,
+          "title": "bumblebee: Inference with multiple models",
+          "author": "SanjayKV-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8803",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "days_open": 74.5
+        },
+        {
+          "number": 8649,
+          "title": "bumblebee: harvest automation",
+          "author": "SanjayKV-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8649",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "days_open": 80.2
+        },
+        {
+          "number": 8637,
+          "title": "shasta: Add PUK 1.0 FC config: ultimate-my24-sop-r4-fc",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8637",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 85.8
+        },
+        {
+          "number": 8613,
+          "title": "shasta: Add PUK 1.0 FC config: rainier-my24-sop-36a15e-r4-fc",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8613",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 86.9
+        },
+        {
+          "number": 8610,
+          "title": "shasta: Add PUK 1.0 FC config: rainier-my25-sop-30a15e-r4-fc",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8610",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 83.7
+        },
+        {
+          "number": 7494,
+          "title": "Shasta: Add CAN Mux dataloss test in Shark",
+          "author": "UFB9XFW-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/7494",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 147.4
+        },
+        {
+          "number": 7493,
+          "title": "Shasta: Create CAN Mux preflight in Shark",
+          "author": "UFB9XFW-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/7493",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 147.3
+        }
+      ],
+      "open": [
+        {
+          "number": 11638,
+          "title": "robotech: b-series: Shrink MqttEmulator memory usage",
+          "author": "sanjaynarayanan-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11638",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11636,
+          "title": "Fix boomtrac_mode_module oscillations",
+          "author": "brian-griglak",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11636",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11635,
+          "title": "Update spyglass to publish SprayControl message",
+          "author": "brian-griglak",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11635",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11634,
+          "title": "shasta: shark: Add VEX LED tests",
+          "author": "richbiggs",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11634",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11633,
+          "title": "robotech: b-series: Shrink PduQueue memory usage",
+          "author": "sanjaynarayanan-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11633",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11631,
+          "title": "third_party: Core Python bindings for AOS",
+          "author": "zwheeler",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11631",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11629,
+          "title": "third_party: Minimal AOS Python bindings with aos_dump and pingpong",
+          "author": "zwheeler",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11629",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11628,
+          "title": "shasta: Update default to Python 3.11",
+          "author": "philsc",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11628",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11625,
+          "title": "shasta: Moose script: Fix SDC version string",
+          "author": "richbiggs",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11625",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11615,
+          "title": "shasta: raven upload checks response status (#11538)",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11615",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11613,
+          "title": "shasta: Add MISSING_NOZZLE_TIP_MAPPING fault to sprayer",
+          "author": "brt-Naman-Gupta",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11613",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11609,
+          "title": "shasta: update to rules_go and bazel_gazelle",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11609",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ]
+        },
+        {
+          "number": 11596,
+          "title": "shasta: Enable NamedCameraSaSConfiguration2 for VPU1",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11596",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11595,
+          "title": "shasta: add camera_position field to CameraSaSConfiguration2",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11595",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11587,
+          "title": "shasta: Handle sent-too-fast errors in status_host",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11587",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11584,
+          "title": "SampleVerse content package metadata module",
+          "author": "brt-brian-smartt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11584",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11582,
+          "title": "shasta: Fix missing HTTP status checks",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11582",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11578,
+          "title": "Remap new lighting channel to avoid crash (#10999)",
+          "author": "brian-griglak",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11578",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11576,
+          "title": "Dev/anu pro39988 spyglass annotation fix",
+          "author": "brtanuradhachandrashekar",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11576",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11567,
+          "title": "shasta: replace glog with blog in golang",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11567",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11555,
+          "title": "shasta: inference allow loading JP5 int8 calibration files for model conversion",
+          "author": "tamdo-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11555",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11554,
+          "title": "shasta: workaround for issue with kernel module packaging user:group permissions being incorrect",
+          "author": "tamdo-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11554",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11553,
+          "title": "skip graviton build on old branches",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11553",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11552,
+          "title": "shasta: update permissions for cgroupV2",
+          "author": "tamdo-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11552",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11550,
+          "title": "SampleVerse content package messages module.",
+          "author": "brt-brian-smartt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11550",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11549,
+          "title": "shark: add interactive CameraSelectors test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11549",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11548,
+          "title": "shark: add interactive ToggleVideoSize test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11548",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11547,
+          "title": "shark: add interactive NoStreamIndicator test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11547",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11546,
+          "title": "shark: add interactive LiveVideo test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11546",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11539,
+          "title": "raven: add ability to pause green uploads",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11539",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11534,
+          "title": "DNC: Test Commit",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11534",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11533,
+          "title": "usl: fix shark tests to validate raw image count",
+          "author": "brtdylan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11533",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11521,
+          "title": "feat(blog): Go logging facade with structured journal fields",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11521",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11514,
+          "title": "Set experiment_id to capture_issue for display-triggered full logs",
+          "author": "kevinkreher-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11514",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11510,
+          "title": "Fix camera kickstart test for ELK.",
+          "author": "debbieguo",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11510",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11503,
+          "title": "dev/clare.bagley/shasta:PRO-37807-add-sns2-usl-flags",
+          "author": "brt-clare-bagley",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11503",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11498,
+          "title": "Retry add a fill method between sparse map vertices",
+          "author": "brt-brian-smartt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11498",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11496,
+          "title": "shasta: Bump max MQTT MessagePayload size",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11496",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11495,
+          "title": "shasta: Tune down VPU2 camera message frequencies (#11181)",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11495",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11488,
+          "title": "pose: clamp in pose interpolator",
+          "author": "brt-colleen",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11488",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11486,
+          "title": "shasta: Clarify comment in inference_status.fbs",
+          "author": "philsc",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11486",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11471,
+          "title": "shark: Add vanilla USB flasher",
+          "author": "Y3S7JGE-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11471",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11470,
+          "title": "shasta: shark: add CheckUDSInstallerOutput",
+          "author": "brt-sarah-newman",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11470",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11469,
+          "title": "shasta: shark: various improvements for uds flashing",
+          "author": "brt-sarah-newman",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11469",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11458,
+          "title": "shark: Example for jama integration",
+          "author": "brt-Yuchun-Liu",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11458",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11457,
+          "title": "shark:Add JAMA test result upload integration",
+          "author": "brt-Yuchun-Liu",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11457",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11456,
+          "title": "shark: Add standard JUnit XML output writer for Shark tests",
+          "author": "brt-Yuchun-Liu",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11456",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11454,
+          "title": "aviary: send pending requests on device handshake",
+          "author": "brtdylan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11454",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11453,
+          "title": "aviary: add pending upload requests dbx query",
+          "author": "brtdylan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11453",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11452,
+          "title": "aviary: record MLI event on upload request",
+          "author": "brtdylan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11452",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11449,
+          "title": "Set up internal and external Artifactory redirects for .info",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11449",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11436,
+          "title": "shark: Add vanilla slot ID test",
+          "author": "Y3S7JGE-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11436",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11423,
+          "title": "shark: add ProdVanillaLocalInstall vanilla test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11423",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11422,
+          "title": "SHARK: Add Generic Power Control through controller interface",
+          "author": "armandojimenez-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11422",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11409,
+          "title": "aviary: wire up mesa clients",
+          "author": "brtdylan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11409",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11408,
+          "title": "aviary: record log tracking state to MLI",
+          "author": "brtdylan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11408",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11407,
+          "title": "aviary: add dbxclient",
+          "author": "brtdylan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11407",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11406,
+          "title": "bazel: add databricks-sql-go go package",
+          "author": "brtdylan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11406",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11399,
+          "title": "shasta: all state machine related changes combined",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11399",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11389,
+          "title": "shasta: remove test runtime condition",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11389",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11387,
+          "title": "Require merge queue on shasta release branches",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11387",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11375,
+          "title": "Move RerunConfig to be a standard member of SpyglassConfig",
+          "author": "randy-schur-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11375",
+          "labels": [
+            "prg:shasta"
+          ]
+        },
+        {
+          "number": 11365,
+          "title": "shasta: fix reformat_ssd.py supported kernel version check",
+          "author": "tamdo-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11365",
+          "labels": [
+            "prg:shasta"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jupiter",
+      "name": "Jupiter",
+      "description": "perception / autonomy",
+      "merged_count": 48,
+      "open_count": 23,
+      "avg_days_to_merge": 12.7,
+      "median_days_to_merge": 2.8,
+      "summary": "Jupiter advanced the Gretzky depth model with optimized disparity regression and curated stereo pseudo-GT pipelines. SDC recording was enhanced with MCAP compression and JQ triggering. Lidar extrinsic calibration and blind spot monitoring were improved.",
+      "merged": [
+        {
+          "number": 11624,
+          "title": "jupiter: Update depth model NV89 engine hashes for subsystem replay",
+          "author": "scottmiller-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11624",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11592,
+          "title": "galileo: Provide option to exclude tests using exclude filter in rerun_failed_github_tests script",
+          "author": "daipayandeb-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11592",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11575,
+          "title": "jupiter: Force subsystem replay to use the user provided output folder",
+          "author": "rondomingobrt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11575",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11573,
+          "title": "[ROBOT-4180] Enable mcap compression in SDC",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11573",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11558,
+          "title": "[ROBOT-4178] Record JQ triggering message in mcap",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11558",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 1.0
+        },
+        {
+          "number": 11551,
+          "title": "gretzky: restore compatibility for joint model checkpoints trained before temperature scaling option existed",
+          "author": "danny-schwartz-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11551",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11545,
+          "title": "jupiter: Lidar extrinsic check in",
+          "author": "brt-jing",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11545",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11508,
+          "title": "gretzky: Load separate left and right valid masks for curated stereo pseudo-GT",
+          "author": "bin-cheng-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11508",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.8
+        },
+        {
+          "number": 11502,
+          "title": "gretzky: Refactor implementation for stereo pseudo GT loss with curated artifacts (port)",
+          "author": "danny-schwartz-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11502",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 1.0
+        },
+        {
+          "number": 11492,
+          "title": "jupiter: Fix Blind Spot Monitor test logic and add BSM subset option \u2026",
+          "author": "scottmiller-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11492",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.0
+        },
+        {
+          "number": 11489,
+          "title": "[ROBOT-4168] Set DDS_MULTICAST_RESEND_THRESHOLD high to reduce multicast for F12s",
+          "author": "pgrice",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11489",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11484,
+          "title": "gretzky: updated depth model IQ head",
+          "author": "vivekmehta-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11484",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 2.3
+        },
+        {
+          "number": 11477,
+          "title": "[ROBOT-4165] Fix event mcap names in file uploader filesets (#11447)",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11477",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11476,
+          "title": "[ROBOT-4165] Fix event mcap names in file uploader filesets (#11447)",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11476",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11474,
+          "title": "gretzky: Optimized implementation of WindowedDisparityRegression",
+          "author": "danny-schwartz-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11474",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11448,
+          "title": "jupiter: Fix Blind Spot Monitor test logic and add BSM subset option",
+          "author": "scottmiller-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11448",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.8
+        },
+        {
+          "number": 11447,
+          "title": "[ROBOT-4165] Fix event mcap names in file uploader filesets",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11447",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.8
+        },
+        {
+          "number": 11446,
+          "title": "jupiter: Fix subsystem replay root dir check after bzlmod migration",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11446",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.4
+        },
+        {
+          "number": 11445,
+          "title": "[ROBOT-4166] Deprecate extra config from onboard diag idl",
+          "author": "luisibarra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11445",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11439,
+          "title": "galileo: Fix BSM test report crash, add options to PTL workflow for running BSM tests",
+          "author": "daipayandeb-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11439",
+          "labels": [
+            "prg:jupiter",
+            "devops"
+          ],
+          "days_open": 0.4
+        },
+        {
+          "number": 11435,
+          "title": "gretzky: Add a few images with machine prediction human FPs to triage list for 'human_on_path_night'",
+          "author": "danny-schwartz-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11435",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.5
+        },
+        {
+          "number": 11418,
+          "title": "[DUNE-3748] Changing chrono clock to adk clock - 2",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11418",
+          "labels": [
+            "prg:adk",
+            "prg:dune",
+            "prg:jupiter"
+          ],
+          "days_open": 1.3
+        },
+        {
+          "number": 11412,
+          "title": "[ADK-4226] Address race condition exposed by the debug build",
+          "author": "rickdynarski-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11412",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11369,
+          "title": "[ROBOT-4155] Backoff img mcaps triggered by dust stops",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11369",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 6.0
+        },
+        {
+          "number": 11360,
+          "title": "[ROBOT-4161]: detection_filterer - use node clock for replay-aware latency metrics",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11360",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 4.7
+        },
+        {
+          "number": 11359,
+          "title": "[ROBOT-4160]: object_localizer - use node clock for replay-aware latency metrics",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11359",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 4.7
+        },
+        {
+          "number": 11358,
+          "title": "[ROBOT-4162]: grid_map_object_aggregator - use replay-aware system clock for latency\u2026",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11358",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 4.7
+        },
+        {
+          "number": 11355,
+          "title": "[ROBOT-4158]: zone_comparator - use node clock for latency metrics instead of system\u2026",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11355",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 4.2
+        },
+        {
+          "number": 11354,
+          "title": "[ROBOT-4157]: tracking - use replay-aware system clock for latency metrics",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11354",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 1.1
+        },
+        {
+          "number": 11328,
+          "title": "jupiter: Fix single camera replacement bug",
+          "author": "brt-ivanpauno",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11328",
+          "labels": [
+            "bug",
+            "prg:jupiter"
+          ],
+          "days_open": 5.0
+        },
+        {
+          "number": 11254,
+          "title": "galileo: Unify test validation architecture and consolidate workflows",
+          "author": "chambliss567",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11254",
+          "labels": [
+            "prg:jupiter",
+            "devops"
+          ],
+          "days_open": 8.2
+        },
+        {
+          "number": 11217,
+          "title": "jupiter: Update recording config for hazard zones topics",
+          "author": "BRTMiguel",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11217",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 7.9
+        },
+        {
+          "number": 11205,
+          "title": "gretzky: EM V2 final large pass",
+          "author": "Alex17Li",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11205",
+          "labels": [
+            "prg:jupiter",
+            "devops"
+          ],
+          "days_open": 3.2
+        },
+        {
+          "number": 11202,
+          "title": "galileo: APT fix dashboard not generating",
+          "author": "Alex17Li",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11202",
+          "labels": [
+            "prg:jupiter",
+            "devops"
+          ],
+          "days_open": 9.0
+        },
+        {
+          "number": 11158,
+          "title": "gretzky: Fix bug in reading masks for F12 tractors",
+          "author": "poojamehtabrt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11158",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 8.4
+        },
+        {
+          "number": 11112,
+          "title": "gretzky: Bug fix for implement ROI anchor determination",
+          "author": "avinashhrajuBRT",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11112",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 10.4
+        },
+        {
+          "number": 11109,
+          "title": "adk: Add BSP Compatibility to APPFS Bundle",
+          "author": "gregleonberg-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11109",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter",
+            "devops"
+          ],
+          "days_open": 13.1
+        },
+        {
+          "number": 10974,
+          "title": "[ADK-4161] Move UDS support from Jupiter to ADK layer",
+          "author": "pabloanigstein-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10974",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter"
+          ],
+          "days_open": 10.1
+        },
+        {
+          "number": 10858,
+          "title": "jupiter: Remove vpu health publisher",
+          "author": "BRTMiguel",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10858",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 18.2
+        },
+        {
+          "number": 10654,
+          "title": "gretzky: Wait for dataset to be ready before starting pp",
+          "author": "Alex17Li",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10654",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 23.6
+        },
+        {
+          "number": 10510,
+          "title": "[ROBOT-3910] RockPi NAS support",
+          "author": "luisibarra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10510",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 28.9
+        },
+        {
+          "number": 10461,
+          "title": "[ROBOT-4016] Removing old monitors (rauc and firmware)",
+          "author": "luisibarra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10461",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 27.3
+        },
+        {
+          "number": 10445,
+          "title": "[ROBOT-4016] Versions Monitor",
+          "author": "luisibarra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10445",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 24.3
+        },
+        {
+          "number": 10281,
+          "title": "gretzky: Dev/alexli/modified dust loss",
+          "author": "Alex17Li",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10281",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 32.1
+        },
+        {
+          "number": 9509,
+          "title": "jupiter: Feature flags validation design and library",
+          "author": "brt-ivanpauno",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/9509",
+          "labels": [
+            "enhancement",
+            "prg:jupiter"
+          ],
+          "days_open": 57.8
+        },
+        {
+          "number": 9268,
+          "title": "[ROBOT-4056] Initial radar point cloud processor",
+          "author": "rondomingobrt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/9268",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 65.9
+        },
+        {
+          "number": 8546,
+          "title": "adk: Switch from #ifdef ENABLE_CUDA to #if ENABLE_CUDA",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8546",
+          "labels": [
+            "prg:adk",
+            "prg:mercury",
+            "prg:jupiter",
+            "third_party",
+            "prg:bumblebee"
+          ],
+          "days_open": 89.6
+        },
+        {
+          "number": 7764,
+          "title": "gretzky: Temperature Scaling Validation Loss via Platt Scaling",
+          "author": "Alex17Li",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/7764",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "days_open": 128.9
+        }
+      ],
+      "open": [
+        {
+          "number": 11627,
+          "title": "gretzky: Separate SkySupervisedLoss from StereoLeftRightConsistencyLoss, add soft loss option, add multiscale support",
+          "author": "danny-schwartz-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11627",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11618,
+          "title": "Automated single camera replacement testing",
+          "author": "brt-ivanpauno",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11618",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11611,
+          "title": "jupiter: Remove implement_type publisher and dependencies.",
+          "author": "BRTMiguel",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11611",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11594,
+          "title": "[ROBOT-4186] Clean up pre-SDC days trigger configs",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11594",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11591,
+          "title": "[ROBOT-4187]: fix object_locator_metrics steady_clock underflow and multi_frame_latency init bug",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11591",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11588,
+          "title": "jupiter: Copernicus Windsurf set up doc",
+          "author": "robosquiggles",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11588",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11583,
+          "title": "jupiter: Feature flags app",
+          "author": "brt-ivanpauno",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11583",
+          "labels": [
+            "enhancement",
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11560,
+          "title": "devops: macOS (arm64) \"support\" + Python 3.10 in dev bootstrap scripting",
+          "author": "robosquiggles",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11560",
+          "labels": [
+            "prg:jupiter",
+            "devops"
+          ]
+        },
+        {
+          "number": 11557,
+          "title": "[ROBOT-4181] Remove rauc statuses from vpu monitor",
+          "author": "luisibarra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11557",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11532,
+          "title": "[ROBOT-4175] Publish Point Count Map from Grid Map Fusion",
+          "author": "ckwacker",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11532",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11513,
+          "title": "galileo: ADD on tractor CAN -shutdown monitor test",
+          "author": "nagarajerravalli",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11513",
+          "labels": [
+            "prg:jupiter",
+            "devops"
+          ]
+        },
+        {
+          "number": 11505,
+          "title": "[ROBOT-4148] Operator tool for rockpi nas setup",
+          "author": "luisibarra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11505",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11494,
+          "title": "[WIP] gretzky: Unified generation of stereo pseudo-GT ",
+          "author": "bin-cheng-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11494",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11478,
+          "title": "[ROBOT-4172] Use day_time_exposure_app",
+          "author": "steveZak",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11478",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter",
+            "third_party"
+          ]
+        },
+        {
+          "number": 11475,
+          "title": "gretzky: add mirror stops in EM",
+          "author": "vivekmehta-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11475",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11455,
+          "title": "galileo: Add GPU-based Subsystem Replay support to Galileo VAT pipeline",
+          "author": "daipayandeb-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11455",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter",
+            "devops"
+          ]
+        },
+        {
+          "number": 11440,
+          "title": "jupiter: job quality logic initial documentation",
+          "author": "pgrice",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11440",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11426,
+          "title": "devops: import test performance",
+          "author": "Alex17Li",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11426",
+          "labels": [
+            "prg:jupiter",
+            "devops"
+          ]
+        },
+        {
+          "number": 11425,
+          "title": "[ROBOT-4142] Convert object zone comparator into a DDS node",
+          "author": "rondomingobrt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11425",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11421,
+          "title": "gretzky: Uncomment and fix EM integration test",
+          "author": "Alex17Li",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11421",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11420,
+          "title": "gretzky: Fix issues running productivity datasets with with benchmark sh",
+          "author": "Alex17Li",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11420",
+          "labels": [
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11410,
+          "title": "Dev/jonweisz/itk validation mark and pj work",
+          "author": "jonweisz-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11410",
+          "labels": [
+            "prg:jupiter",
+            "devops"
+          ]
+        },
+        {
+          "number": 11381,
+          "title": "Remove vestigial validation steps from integration_toolkit.steps",
+          "author": "jonweisz-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11381",
+          "labels": [
+            "prg:jupiter",
+            "devops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adk",
+      "name": "ADK",
+      "description": "Application Development Kit",
+      "merged_count": 32,
+      "open_count": 16,
+      "avg_days_to_merge": 6.0,
+      "median_days_to_merge": 1.1,
+      "summary": "ADK shipped a new chart calibration UI with 3D coverage views, fixed EEPROM write bugs, and improved CUDA correspondence tests. Epiviz gained Jupiter VPU delta config support and cross-topic frame index warnings. The I2C write path was fixed.",
+      "merged": [
+        {
+          "number": 11607,
+          "title": "adk: Epiviz App - Add warning when merged MCAP has no common frame index across cameras",
+          "author": "daneshgandhi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11607",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.0
+        },
+        {
+          "number": 11606,
+          "title": "adk: Chart Calibration UI - Views as separate apps and 3D coverage based on opengl",
+          "author": "daneshgandhi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11606",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11605,
+          "title": "adk: Epiviz App - Add warning when merged MCAP has no common frame index across cameras",
+          "author": "athulkbrt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11605",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.4
+        },
+        {
+          "number": 11602,
+          "title": "adk: EEPROM Tool - Improve dogbone EEPROM handling",
+          "author": "athulkbrt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11602",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.7
+        },
+        {
+          "number": 11590,
+          "title": "[ADK-4238]: I2C write fix",
+          "author": "chuckstanski-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11590",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.6
+        },
+        {
+          "number": 11577,
+          "title": "[ADK-4232] Update host path for production: rebase, point to prod certs, update thing name to \"vpu\"",
+          "author": "rakeshdugad-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11577",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11525,
+          "title": "adk: Epiviz App - Add Jupiter implement VPU delta config",
+          "author": "athulkbrt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11525",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11507,
+          "title": "adk: Use a non-deduced context for ByteSwap",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11507",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 1.8
+        },
+        {
+          "number": 11499,
+          "title": "[ADK-4229]: Bug: EEPROM Write bug",
+          "author": "chuckstanski-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11499",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11490,
+          "title": "adk: Refactor cuda_correspondence_test for clarity and correctness",
+          "author": "danielgotsch-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11490",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 1.4
+        },
+        {
+          "number": 11465,
+          "title": "adk: Start with calib params closer to optimal to reduce test runtimes",
+          "author": "amaharshi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11465",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11464,
+          "title": "adk: Chart Calibration UI - Additional memory utilization optimization",
+          "author": "daneshgandhi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11464",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 3.4
+        },
+        {
+          "number": 11432,
+          "title": "[ADK-4193] Add GetHelpMessage() support for topic and metadata reencoders",
+          "author": "wingiptam-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11432",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 1.9
+        },
+        {
+          "number": 11431,
+          "title": "adk: Fix mcap_merge binary location for CI compatibility (#11368)",
+          "author": "wingiptam-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11431",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11418,
+          "title": "[DUNE-3748] Changing chrono clock to adk clock - 2",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11418",
+          "labels": [
+            "prg:adk",
+            "prg:dune",
+            "prg:jupiter"
+          ],
+          "days_open": 1.3
+        },
+        {
+          "number": 11413,
+          "title": "[ADK-4225] Allow projects to configure Multicast Resend Threshold",
+          "author": "rickdynarski-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11413",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.6
+        },
+        {
+          "number": 11411,
+          "title": "[ADK-4227] Fix missing initialization in IsaacsimBridgeModule",
+          "author": "rickdynarski-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11411",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11401,
+          "title": "[ADK-4222] Convert TAI->UTC time for batched IMU, add tracking test",
+          "author": "amaharshi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11401",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 2.7
+        },
+        {
+          "number": 11378,
+          "title": "[ADK-4221] Split image_processor_test into 4 different test suites",
+          "author": "rickdynarski-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11378",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11368,
+          "title": "adk: Fix mcap_merge binary location for CI compatibility",
+          "author": "wingiptam-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11368",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11357,
+          "title": "[ROBOT-4159]: image_processor - fix cross-clock-domain bug in MIPI EOF latency metric",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11357",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 1.0
+        },
+        {
+          "number": 11333,
+          "title": "[ADK-4215] Add Amazon Root CA to ADK bundle for Direct to Host broker connections",
+          "author": "rakeshdugad-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11333",
+          "labels": [
+            "prg:adk",
+            "third_party"
+          ],
+          "days_open": 0.7
+        },
+        {
+          "number": 11292,
+          "title": "[ADK-4211] Ensure MQTT broker reconnection under all failure conditions",
+          "author": "rakeshdugad-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11292",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 4.9
+        },
+        {
+          "number": 11252,
+          "title": "adk: Add embedded_update_manager to ADK bundle",
+          "author": "pabloanigstein-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11252",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 6.1
+        },
+        {
+          "number": 11240,
+          "title": "[ADK-4182] replay: Support looping with publish-clock",
+          "author": "wingiptam-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11240",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 2.1
+        },
+        {
+          "number": 11143,
+          "title": "[ADK-4189] Imu calibration with starfire gps poses.",
+          "author": "bartoszkalinczuk",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11143",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 10.5
+        },
+        {
+          "number": 11109,
+          "title": "adk: Add BSP Compatibility to APPFS Bundle",
+          "author": "gregleonberg-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11109",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter",
+            "devops"
+          ],
+          "days_open": 13.1
+        },
+        {
+          "number": 11022,
+          "title": "[ADK-4160] Improvement on mcap_merge: add option strict-schema",
+          "author": "wingiptam-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11022",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 8.2
+        },
+        {
+          "number": 11020,
+          "title": "[ADK-4073] Make oncal CUDA tests use realistic jupiter data and add profiling",
+          "author": "danielgotsch-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11020",
+          "labels": [
+            "prg:adk"
+          ],
+          "days_open": 12.4
+        },
+        {
+          "number": 10974,
+          "title": "[ADK-4161] Move UDS support from Jupiter to ADK layer",
+          "author": "pabloanigstein-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10974",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter"
+          ],
+          "days_open": 10.1
+        },
+        {
+          "number": 10852,
+          "title": "adk: Add a low level `ChannelMessageView.iter_arrow` function to ADK mcap pybind library",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10852",
+          "labels": [
+            "prg:adk",
+            "prg:mesa",
+            "third_party"
+          ],
+          "days_open": 15.6
+        },
+        {
+          "number": 8546,
+          "title": "adk: Switch from #ifdef ENABLE_CUDA to #if ENABLE_CUDA",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8546",
+          "labels": [
+            "prg:adk",
+            "prg:mercury",
+            "prg:jupiter",
+            "third_party",
+            "prg:bumblebee"
+          ],
+          "days_open": 89.6
+        }
+      ],
+      "open": [
+        {
+          "number": 11621,
+          "title": "[ADK-4247] Start heartbeats if enabled",
+          "author": "rickdynarski-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11621",
+          "labels": [
+            "prg:adk"
+          ]
+        },
+        {
+          "number": 11616,
+          "title": "adk: EEPROM Tool - Improve dogbone EEPROM handling",
+          "author": "daneshgandhi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11616",
+          "labels": [
+            "prg:adk"
+          ]
+        },
+        {
+          "number": 11604,
+          "title": "[ADK-4248] Add large file support to the autocal python script (stream the data from the mcap)",
+          "author": "danielgotsch-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11604",
+          "labels": [
+            "prg:adk"
+          ]
+        },
+        {
+          "number": 11601,
+          "title": "adk: Parallelize colmap verification/BA, add scale & threading knobs",
+          "author": "amaharshi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11601",
+          "labels": [
+            "prg:adk"
+          ]
+        },
+        {
+          "number": 11586,
+          "title": "[ADK-4233] Direct to Host: Enable VPU direct communication with JD AWS Host broker",
+          "author": "rakeshdugad-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11586",
+          "labels": [
+            "prg:adk",
+            "third_party"
+          ]
+        },
+        {
+          "number": 11515,
+          "title": "adk: Add flatbuffer support to mcapdump",
+          "author": "philsc",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11515",
+          "labels": [
+            "prg:adk"
+          ]
+        },
+        {
+          "number": 11509,
+          "title": "adk: (and dune) speed up safety_bubble and dds_tf2 tests with virtual clocks",
+          "author": "mattelsey-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11509",
+          "labels": [
+            "prg:adk",
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11497,
+          "title": "devops: update rcs schema uploader gha workflow for brtplat env [PACE-1797]",
+          "author": "anuragbabu-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11497",
+          "labels": [
+            "prg:adk",
+            "devops"
+          ]
+        },
+        {
+          "number": 11478,
+          "title": "[ROBOT-4172] Use day_time_exposure_app",
+          "author": "steveZak",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11478",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter",
+            "third_party"
+          ]
+        },
+        {
+          "number": 11455,
+          "title": "galileo: Add GPU-based Subsystem Replay support to Galileo VAT pipeline",
+          "author": "daipayandeb-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11455",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter",
+            "devops"
+          ]
+        },
+        {
+          "number": 11421,
+          "title": "gretzky: Uncomment and fix EM integration test",
+          "author": "Alex17Li",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11421",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter"
+          ]
+        },
+        {
+          "number": 11417,
+          "title": "adk: add mcap_reencoder S3 packaging and upload tasks",
+          "author": "shubhamwakchaure-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11417",
+          "labels": [
+            "prg:adk"
+          ]
+        },
+        {
+          "number": 11402,
+          "title": "[ADK-4223] Recover MtgProxyClient from mtg_proxy restarts instead of crashing",
+          "author": "pabloanigstein-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11402",
+          "labels": [
+            "prg:adk"
+          ]
+        },
+        {
+          "number": 11393,
+          "title": "[ADK-4170] Add documentation for configured clocks",
+          "author": "pabloanigstein-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11393",
+          "labels": [
+            "prg:adk"
+          ]
+        },
+        {
+          "number": 11379,
+          "title": "mesa: Add schema and data fields to rti_dds_to_arrow_reader; add chunking",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11379",
+          "labels": [
+            "prg:adk",
+            "prg:mesa"
+          ]
+        },
+        {
+          "number": 11361,
+          "title": "[ADK-4214] recorder: Use virtual clock timestamp for publish_time",
+          "author": "wingiptam-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11361",
+          "labels": [
+            "prg:adk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dune",
+      "name": "Dune",
+      "description": "autonomous operation",
+      "merged_count": 24,
+      "open_count": 14,
+      "avg_days_to_merge": 2.6,
+      "median_days_to_merge": 1.1,
+      "summary": "Dune advanced its replay infrastructure with subsystem autocalibration, metrics collection, and S3 integration. Experience configs were cleaned up and hardware metrics reporting was added.",
+      "merged": [
+        {
+          "number": 11619,
+          "title": "Dev/luis/dune replay",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11619",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.0
+        },
+        {
+          "number": 11585,
+          "title": "dune: Set event mcap chunking to 45s",
+          "author": "mattelsey-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11585",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11574,
+          "title": "dune: removing unwanted stuff from deltas, leaving only used ones",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11574",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11570,
+          "title": "dune: updating experiences to make tests green",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11570",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.6
+        },
+        {
+          "number": 11543,
+          "title": "dune: updating experiences with new bags",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11543",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11541,
+          "title": "dune: dune subsystem replay autocalibration",
+          "author": "RubenMovsesyan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11541",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 1.0
+        },
+        {
+          "number": 11540,
+          "title": "dune: add vadc limit topics to recorder",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11540",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11504,
+          "title": "dune: EMU Replay working better, and metrics/s3 added",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11504",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 1.1
+        },
+        {
+          "number": 11482,
+          "title": "dune: fixes to not have vvpu crashing",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11482",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11444,
+          "title": "dune: hardware metrics",
+          "author": "RubenMovsesyan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11444",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 2.9
+        },
+        {
+          "number": 11441,
+          "title": "dune/replay: resolve experience config paths against workspace root s\u2026",
+          "author": "RubenMovsesyan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11441",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 2.0
+        },
+        {
+          "number": 11419,
+          "title": "dune: Metrics WIP for replay interface",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11419",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.0
+        },
+        {
+          "number": 11418,
+          "title": "[DUNE-3748] Changing chrono clock to adk clock - 2",
+          "author": "LuisIvSandoval",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11418",
+          "labels": [
+            "prg:adk",
+            "prg:dune",
+            "prg:jupiter"
+          ],
+          "days_open": 1.3
+        },
+        {
+          "number": 11391,
+          "title": "dune: fixing this value not being a float",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11391",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.2
+        },
+        {
+          "number": 11384,
+          "title": "dune: bugfix - apply IQ smudge check to cameras w/o masks ",
+          "author": "mattelsey-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11384",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11352,
+          "title": "dune: better exit handling for sim",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11352",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 1.1
+        },
+        {
+          "number": 11332,
+          "title": "dune: Catching up to DAV_Libraries",
+          "author": "brt-nicolas-delima",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11332",
+          "labels": [
+            "prg:dune",
+            "third_party"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11272,
+          "title": "dune: Rework sim launching",
+          "author": "mattelsey-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11272",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 7.2
+        },
+        {
+          "number": 11262,
+          "title": "[DUNE-3824] SC02 bundle update post-hardware changes for tech field days",
+          "author": "gracematera-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11262",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 9.0
+        },
+        {
+          "number": 11249,
+          "title": "dune: mapping deb to start with launch screen",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11249",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 2.1
+        },
+        {
+          "number": 11248,
+          "title": "[DUNE-3807] Contract test for minimum expected geojson version between mapping and zone check",
+          "author": "gracematera-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11248",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 2.1
+        },
+        {
+          "number": 11183,
+          "title": "dune: update readme for emu",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11183",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 3.8
+        },
+        {
+          "number": 11002,
+          "title": "[DUNE-3429] Add checks for VADC CAN messages for frequency and rolling counter - part 1",
+          "author": "brt-holgerbanski",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11002",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 9.8
+        },
+        {
+          "number": 10980,
+          "title": "dune: update azimuthal error from 2deg to 3deg",
+          "author": "Luke-A-Wendt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10980",
+          "labels": [
+            "prg:dune"
+          ],
+          "days_open": 15.3
+        }
+      ],
+      "open": [
+        {
+          "number": 11632,
+          "title": "dune: fix zone splitting drift",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11632",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11630,
+          "title": "[SW-3877] Configuration bridge can update Gen5/DAV Display",
+          "author": "nahueespinosa",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11630",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11608,
+          "title": "dune: Fix geojson 3D offset",
+          "author": "gracematera-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11608",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11580,
+          "title": "dune: new cameras for sim",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11580",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11569,
+          "title": "[DUNE-3955] Deceleration message source change - Part 2/3",
+          "author": "brt-gustavoullmann",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11569",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11566,
+          "title": "dune: extend velocity buffer to account for both ego and target stops",
+          "author": "grantwarden-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11566",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11565,
+          "title": "dune: better handling of cameras for simulation",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11565",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11544,
+          "title": "dune: adding roi list sub to spark ai proxy",
+          "author": "Luke-A-Wendt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11544",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11536,
+          "title": "dune: extract cross vpu message alignment to utils",
+          "author": "brt-gustavoullmann",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11536",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11526,
+          "title": "[DUNE-3955] Deceleration message source change",
+          "author": "brt-gustavoullmann",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11526",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11509,
+          "title": "adk: (and dune) speed up safety_bubble and dds_tf2 tests with virtual clocks",
+          "author": "mattelsey-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11509",
+          "labels": [
+            "prg:adk",
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11485,
+          "title": "dune: Adding dav poses to recorder and tf tree",
+          "author": "brt-nicolas-delima",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11485",
+          "labels": [
+            "prg:dune"
+          ]
+        },
+        {
+          "number": 11451,
+          "title": "dune: make dune apps into adk apps",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11451",
+          "labels": [
+            "prg:dune",
+            "prg:mercury",
+            "devops"
+          ]
+        },
+        {
+          "number": 11366,
+          "title": "[DUNE-3949] Aggregate transforms app and safety bubble application state sources",
+          "author": "brt-gustavoullmann",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11366",
+          "labels": [
+            "prg:dune"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unlabeled",
+      "name": "Unlabeled",
+      "description": "No prg: label",
+      "merged_count": 23,
+      "open_count": 17,
+      "avg_days_to_merge": 4.9,
+      "median_days_to_merge": 1.0,
+      "summary": "Infrastructure work migrated multiple third-party dependencies (gRPC, protobuf, jsoncpp) to bzlmod. Devin agent configuration was updated and a Graphite-bot PR nudge flow was added.",
+      "merged": [
+        {
+          "number": 11598,
+          "title": "adk: Fix Open3D debug build, use std::filesystem in FileSystem.cpp",
+          "author": "amaharshi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11598",
+          "labels": [
+            "third_party"
+          ],
+          "days_open": 0.1
+        },
+        {
+          "number": 11568,
+          "title": "[ADK-4244] Enable CPU only build for COLMAP",
+          "author": "amaharshi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11568",
+          "labels": [
+            "third_party"
+          ],
+          "days_open": 0.5
+        },
+        {
+          "number": 11559,
+          "title": "adk: fix profiling tool paths in vpu_nsight, vpu_nsys",
+          "author": "alexeyromanovskiy-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11559",
+          "labels": [],
+          "days_open": 0.3
+        },
+        {
+          "number": 11529,
+          "title": "devops: Fix platform_suffix for vpu2_jp5 configs",
+          "author": "ramiro-serra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11529",
+          "labels": [],
+          "days_open": 1.5
+        },
+        {
+          "number": 11522,
+          "title": "devops: Migrate gRPC and boringssl to bzlmod remove dead googleapis/google-cloud-cpp",
+          "author": "perfinion",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11522",
+          "labels": [
+            "devops",
+            "third_party"
+          ],
+          "days_open": 0.4
+        },
+        {
+          "number": 11506,
+          "title": "[ROBOT-4173] EUM - Send Download Progress to BERS",
+          "author": "pgrice",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11506",
+          "labels": [],
+          "days_open": 1.0
+        },
+        {
+          "number": 11462,
+          "title": "devops: Migrate jsoncpp, yaml-cpp to bzlmod",
+          "author": "perfinion",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11462",
+          "labels": [
+            "devops",
+            "third_party"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11461,
+          "title": "devops: Migrate libjpeg-turbo, libpng, zlib to bzlmod",
+          "author": "perfinion",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11461",
+          "labels": [
+            "devops",
+            "third_party"
+          ],
+          "days_open": 0.7
+        },
+        {
+          "number": 11460,
+          "title": "devops: Migrate gtest, gflags, double-conversion, re2 to bzlmod",
+          "author": "perfinion",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11460",
+          "labels": [
+            "devops",
+            "third_party"
+          ],
+          "days_open": 0.6
+        },
+        {
+          "number": 11459,
+          "title": "devops: Migrate bazel_latex, rules_m4, rules_bison, rules_flex to bzlmod",
+          "author": "perfinion",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11459",
+          "labels": [
+            "devops"
+          ],
+          "days_open": 0.4
+        },
+        {
+          "number": 11442,
+          "title": "devops: remove com_google_protobuf from grpc_extra_deps in legacy WORKSPACE",
+          "author": "jorgenicho-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11442",
+          "labels": [
+            "third_party"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11404,
+          "title": "devops: Add `readlink` to devin's allowed tools",
+          "author": "philsc",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11404",
+          "labels": [],
+          "days_open": 2.5
+        },
+        {
+          "number": 11400,
+          "title": "devops: Remove non bzlmod files",
+          "author": "perfinion",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11400",
+          "labels": [
+            "devops"
+          ],
+          "days_open": 2.4
+        },
+        {
+          "number": 11392,
+          "title": "Force the next stack PR to rebase when the bottom is in the merge queue (#9374)",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11392",
+          "labels": [
+            "devops"
+          ],
+          "days_open": 2.8
+        },
+        {
+          "number": 11370,
+          "title": "devops: Rename .cognition/ to .devin/ for Devin CLI config",
+          "author": "danielgotsch-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11370",
+          "labels": [],
+          "days_open": 0.1
+        },
+        {
+          "number": 11353,
+          "title": "dune: support cuDNN 9 header names in cuda_configure.bzl",
+          "author": "RubenMovsesyan",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11353",
+          "labels": [
+            "devops"
+          ],
+          "days_open": 0.8
+        },
+        {
+          "number": 11271,
+          "title": "bumblebee: ignore directories not supported on bazel 7.6.1",
+          "author": "AASanchezA",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11271",
+          "labels": [
+            "devops",
+            "third_party"
+          ],
+          "days_open": 9.1
+        },
+        {
+          "number": 11255,
+          "title": "shared: add readme and update documentation for shared stop framework",
+          "author": "brt-chris",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11255",
+          "labels": [
+            "shared"
+          ],
+          "days_open": 5.4
+        },
+        {
+          "number": 11227,
+          "title": "devops: The graphite merge queue restacking should work on Shasta release branches",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11227",
+          "labels": [
+            "devops"
+          ],
+          "days_open": 3.1
+        },
+        {
+          "number": 11187,
+          "title": "devops: Enable BzlMod Hybrid mode",
+          "author": "perfinion",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11187",
+          "labels": [
+            "devops"
+          ],
+          "days_open": 4.2
+        },
+        {
+          "number": 11159,
+          "title": "[ADK-4195] Add Open3D 0.19.0 as third_party with BCR deps nanoflann 1.5.4, qhull 8.0.2",
+          "author": "amaharshi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11159",
+          "labels": [
+            "devops",
+            "third_party"
+          ],
+          "days_open": 9.9
+        },
+        {
+          "number": 10638,
+          "title": "[ADK-4084] Add kiss-icp as third_party",
+          "author": "amaharshi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10638",
+          "labels": [
+            "devops",
+            "third_party"
+          ],
+          "days_open": 26.1
+        },
+        {
+          "number": 10110,
+          "title": "reprogramming: remove skip-phy-fw-update workaround",
+          "author": "tamdo-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10110",
+          "labels": [],
+          "days_open": 38.0
+        }
+      ],
+      "open": [
+        {
+          "number": 11637,
+          "title": "devops: Graphite bot double-check prior to PR nudge",
+          "author": "ryancalhoun-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11637",
+          "labels": [
+            "devops"
+          ]
+        },
+        {
+          "number": 11626,
+          "title": "Enable highres_mapper and tile uploads in rainier wacker config",
+          "author": "kiran-mohan-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11626",
+          "labels": []
+        },
+        {
+          "number": 11622,
+          "title": "[ROBOT-4061] Create warm cache upload workflow",
+          "author": "andrewring",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11622",
+          "labels": [
+            "devops"
+          ]
+        },
+        {
+          "number": 11599,
+          "title": "devops: add warm-cache index.json schema and README",
+          "author": "andrewring",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11599",
+          "labels": [
+            "devops"
+          ]
+        },
+        {
+          "number": 11597,
+          "title": "DONOTMERGE: test on dev cluster",
+          "author": "perfinion",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11597",
+          "labels": [
+            "devops"
+          ]
+        },
+        {
+          "number": 11572,
+          "title": "Fix code formatting from f6c91f37799ef94689d3082217deda44456c2c1e",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11572",
+          "labels": []
+        },
+        {
+          "number": 11564,
+          "title": "shasta: Add PUK 1.0 FC config: ultimate-my24-sop-r4-fc (#8637)",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11564",
+          "labels": []
+        },
+        {
+          "number": 11563,
+          "title": "shasta: Add PUK 1.0 FC config: rainier-my24-sop-36a15e-r4-fc (#8613)",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11563",
+          "labels": []
+        },
+        {
+          "number": 11562,
+          "title": "shasta: Add PUK 1.0 FC config: rainier-my25-sop-30a15e-r4-fc (#8610)",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11562",
+          "labels": []
+        },
+        {
+          "number": 11561,
+          "title": "shasta: Add PUK 1.0 FC config: whistler-my25-sop-36s20e-r4-fc (#8535)",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11561",
+          "labels": []
+        },
+        {
+          "number": 11523,
+          "title": "devops: Add rules_license patches to 9 bzlmod dependencies",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11523",
+          "labels": [
+            "devops",
+            "third_party"
+          ]
+        },
+        {
+          "number": 11516,
+          "title": "[ROBOT-4174] Add script for analyzing merge queue performance",
+          "author": "andrewring",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11516",
+          "labels": [
+            "devops"
+          ]
+        },
+        {
+          "number": 11493,
+          "title": "devops:  trust artifactory cert for pip downloads",
+          "author": "jorgenicho-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11493",
+          "labels": [
+            "devops"
+          ]
+        },
+        {
+          "number": 11472,
+          "title": "Dev/mchambliss/itk validation test rebase",
+          "author": "chambliss567",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11472",
+          "labels": []
+        },
+        {
+          "number": 11394,
+          "title": "[ROBOT-4163] Create vpu driven vpu pause diagrams",
+          "author": "andrewring",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11394",
+          "labels": []
+        },
+        {
+          "number": 11390,
+          "title": "devops: testing warm cache upload/download in dev cluseter DO NOT MERGE",
+          "author": "andrewring",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11390",
+          "labels": [
+            "devops"
+          ]
+        },
+        {
+          "number": 11356,
+          "title": "[ROBOT-3302] Make EUM more resilient with system config issues, don't rely upon `compute_specific_bringup` directly",
+          "author": "andrewring",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11356",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "description": "localization / mapping",
+      "merged_count": 9,
+      "open_count": 4,
+      "avg_days_to_merge": 12.3,
+      "median_days_to_merge": 2.3,
+      "summary": "Mercury shipped a universal wheel odometer, ported visual odometry metrics to resim, and stood up resim v0. Gamma data collection and OpenImu event trigger simplification also landed.",
+      "merged": [
+        {
+          "number": 11531,
+          "title": "devops: Add pre-commit script that replaces `#ifdef ENABLE_CUDA` with `#if ENABLE_CUDA`",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11531",
+          "labels": [
+            "prg:mercury",
+            "devops"
+          ],
+          "days_open": 0.9
+        },
+        {
+          "number": 11450,
+          "title": "mercury: add more stats to resim, and fix plots ",
+          "author": "brt-chris",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11450",
+          "labels": [
+            "prg:mercury"
+          ],
+          "days_open": 2.9
+        },
+        {
+          "number": 11443,
+          "title": "mercury: Gamma data collection work",
+          "author": "ramiro-serra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11443",
+          "labels": [
+            "prg:mercury",
+            "devops",
+            "shared"
+          ],
+          "days_open": 1.3
+        },
+        {
+          "number": 11434,
+          "title": "mercury: Remove event trigger from OpenImu and simplify publishing logic",
+          "author": "ramiro-serra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11434",
+          "labels": [
+            "prg:mercury"
+          ],
+          "days_open": 2.0
+        },
+        {
+          "number": 11427,
+          "title": "mercury: Map test assertion failures to success exit code in ReSim en\u2026",
+          "author": "ramiro-serra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11427",
+          "labels": [
+            "prg:mercury"
+          ],
+          "days_open": 0.5
+        },
+        {
+          "number": 11380,
+          "title": "mercury: port vo metrics to resim",
+          "author": "brt-chris",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11380",
+          "labels": [
+            "prg:mercury"
+          ],
+          "days_open": 3.7
+        },
+        {
+          "number": 11256,
+          "title": "mercury: new shared universal wheel odometer",
+          "author": "brt-chris",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11256",
+          "labels": [
+            "prg:mercury",
+            "devops",
+            "shared"
+          ],
+          "days_open": 7.9
+        },
+        {
+          "number": 11237,
+          "title": "mercury: resim v0",
+          "author": "ramiro-serra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11237",
+          "labels": [
+            "prg:mercury",
+            "devops"
+          ],
+          "days_open": 2.3
+        },
+        {
+          "number": 8546,
+          "title": "adk: Switch from #ifdef ENABLE_CUDA to #if ENABLE_CUDA",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8546",
+          "labels": [
+            "prg:adk",
+            "prg:mercury",
+            "prg:jupiter",
+            "third_party",
+            "prg:bumblebee"
+          ],
+          "days_open": 89.6
+        }
+      ],
+      "open": [
+        {
+          "number": 11617,
+          "title": "mercury: Implementation of VADC protocol",
+          "author": "DanielMovsesyanBRT",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11617",
+          "labels": [
+            "prg:mercury",
+            "shared"
+          ]
+        },
+        {
+          "number": 11612,
+          "title": "merlin: localization fixes",
+          "author": "ramiro-serra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11612",
+          "labels": [
+            "prg:mercury"
+          ]
+        },
+        {
+          "number": 11527,
+          "title": "merlin: [WIP] localization work",
+          "author": "ramiro-serra-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11527",
+          "labels": [
+            "prg:mercury",
+            "shared"
+          ]
+        },
+        {
+          "number": 11451,
+          "title": "dune: make dune apps into adk apps",
+          "author": "matejgoc-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11451",
+          "labels": [
+            "prg:dune",
+            "prg:mercury",
+            "devops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bumblebee",
+      "name": "Bumblebee",
+      "description": "harvest automation",
+      "merged_count": 5,
+      "open_count": 1,
+      "avg_days_to_merge": 62.6,
+      "median_days_to_merge": 74.5,
+      "summary": "Bumblebee merged long-running branches for multi-model inference, observation state parsing with offset time, and harvest automation scaffolding.",
+      "merged": [
+        {
+          "number": 10702,
+          "title": "bumblebee: Update dataset creation script to merge with previous datasets if provided",
+          "author": "rakhil575",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10702",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "days_open": 17.8
+        },
+        {
+          "number": 9542,
+          "title": "bumblebee: Implementation to parse observation states with offset time.  ",
+          "author": "SanjayKV-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/9542",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "days_open": 51.1
+        },
+        {
+          "number": 8803,
+          "title": "bumblebee: Inference with multiple models",
+          "author": "SanjayKV-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8803",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "days_open": 74.5
+        },
+        {
+          "number": 8649,
+          "title": "bumblebee: harvest automation",
+          "author": "SanjayKV-deere",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8649",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "days_open": 80.2
+        },
+        {
+          "number": 8546,
+          "title": "adk: Switch from #ifdef ENABLE_CUDA to #if ENABLE_CUDA",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8546",
+          "labels": [
+            "prg:adk",
+            "prg:mercury",
+            "prg:jupiter",
+            "third_party",
+            "prg:bumblebee"
+          ],
+          "days_open": 89.6
+        }
+      ],
+      "open": [
+        {
+          "number": 11609,
+          "title": "shasta: update to rules_go and bazel_gazelle",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11609",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mesa",
+      "name": "Mesa",
+      "description": "",
+      "merged_count": 1,
+      "open_count": 3,
+      "avg_days_to_merge": 15.6,
+      "median_days_to_merge": 15.6,
+      "summary": "Mesa merged a low-level Arrow iterator for MCAP pybind, enabling efficient channel-level data access.",
+      "merged": [
+        {
+          "number": 10852,
+          "title": "adk: Add a low level `ChannelMessageView.iter_arrow` function to ADK mcap pybind library",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/10852",
+          "labels": [
+            "prg:adk",
+            "prg:mesa",
+            "third_party"
+          ],
+          "days_open": 15.6
+        }
+      ],
+      "open": [
+        {
+          "number": 11600,
+          "title": "third_party: Factor the compute module out of arrow ",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11600",
+          "labels": [
+            "prg:mesa",
+            "devops",
+            "third_party"
+          ]
+        },
+        {
+          "number": 11517,
+          "title": "mesa: Updating _mcap_tools_pybind.py to match C++ MCAP tools' implementation",
+          "author": "zonera-javed",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11517",
+          "labels": [
+            "prg:mesa"
+          ]
+        },
+        {
+          "number": 11379,
+          "title": "mesa: Add schema and data fields to rti_dds_to_arrow_reader; add chunking",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11379",
+          "labels": [
+            "prg:adk",
+            "prg:mesa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "athena",
+      "name": "Athena",
+      "description": "",
+      "merged_count": 0,
+      "open_count": 1,
+      "avg_days_to_merge": 0,
+      "median_days_to_merge": 0,
+      "summary": "Athena has an initial configuration PR in review.",
+      "merged": [],
+      "open": [
+        {
+          "number": 11603,
+          "title": "athena: Initial configuration ",
+          "author": "divyakul1",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11603",
+          "labels": [
+            "devops",
+            "prg:athena"
+          ]
+        }
+      ]
+    }
+  ]
+}
