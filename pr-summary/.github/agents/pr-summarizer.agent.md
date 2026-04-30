@@ -60,6 +60,28 @@ gh api \
   }'
 ```
 
+### Step 2b: Enrich with lines of code
+
+The search API does not return additions/deletions. After fetching PRs, run a
+second query to get LOC data and join by PR number:
+
+```bash
+# Merged PRs LOC
+gh pr list --repo BlueRiverTechnology/brt \
+  --state merged --search "merged:>=${SINCE_DATE}" \
+  --json number,additions,deletions,changedFiles \
+  --limit 500
+
+# Open PRs LOC
+gh pr list --repo BlueRiverTechnology/brt \
+  --state open --search "created:>=${SINCE_DATE}" \
+  --json number,additions,deletions,changedFiles \
+  --limit 500
+```
+
+Add `additions`, `deletions`, and `changed_files` to each PR record by matching
+on `number`.
+
 ### Step 3: Group by team
 
 Group by `prg:*` labels. Known programs:
@@ -210,7 +232,10 @@ After generating the summary, save **two files** to the `reports/` directory:
           "author": "jocelyn-vil",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11571",
           "labels": ["prg:shasta"],
-          "days_open": 1.3
+          "days_open": 1.3,
+          "additions": 155,
+          "deletions": 9,
+          "changed_files": 4
         }
       ],
       "open": []

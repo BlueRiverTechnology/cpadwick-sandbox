@@ -400,11 +400,39 @@ a:hover {
   padding: 0.35rem 0;
   line-height: 1.4;
 }
+.pr-list-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  padding: 0.2rem 0 0.3rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.25rem;
+  list-style: none;
+}
+.pr-list-header .pr-number {
+  flex-shrink: 0;
+  white-space: nowrap;
+  width: 4.5rem;
+}
+.pr-list-header .pr-title {
+  flex: 1;
+}
+.pr-list-header .pr-days {
+  flex-shrink: 0;
+  white-space: nowrap;
+  width: 5rem;
+  text-align: right;
+}
 .pr-item .pr-number {
   color: var(--accent-light);
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
+  width: 4.5rem;
 }
 .pr-item .pr-title {
   color: var(--text);
@@ -419,6 +447,23 @@ a:hover {
   font-size: 0.75rem;
   white-space: nowrap;
   flex-shrink: 0;
+  width: 5rem;
+  text-align: right;
+}
+.pr-item .pr-loc,
+.pr-list-header .pr-loc {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 7rem;
+  text-align: right;
+}
+.loc-add {
+  color: var(--green);
+  margin-right: 0.3rem;
+}
+.loc-del {
+  color: #e55;
 }
 .pr-item .pr-author {
   color: var(--text-muted);

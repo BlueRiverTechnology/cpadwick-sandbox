@@ -188,30 +188,38 @@ function groupByAuthor(prs) {
   }
   return Object.entries(map)
     .map(([author, items]) => ({ author, items }))
-    .sort((a, b) => b.items.length - a.items.length);
+    .sort((a, b) => a.author.localeCompare(b.author));
 }
 
 function AuthorGroup({ author, items, type }) {
   const [open, setOpen] = useState(false);
-  const avgDays = type === 'merged' && items.some((pr) => pr.days_open != null)
-    ? (items.reduce((s, pr) => s + (pr.days_open || 0), 0) / items.length).toFixed(1)
-    : null;
   return (
     <div className="author-group">
       <button className="author-row" onClick={() => setOpen(!open)}>
         <span className={`author-chevron ${open ? 'open' : ''}`}>▸</span>
         <span className="author-name">{author}</span>
-        {avgDays && <span className="author-avg">{avgDays}d avg</span>}
         <span className={`badge ${type}`}>{items.length} {type === 'merged' ? 'merged' : 'open'}</span>
       </button>
       {open && (
         <ul className="pr-list author-prs">
+          <li className="pr-list-header">
+            <span className="pr-number">PR</span>
+            <span className="pr-title">Title</span>
+            <span className="pr-loc">Lines</span>
+            <span className="pr-days">Days open</span>
+          </li>
           {items.map((pr) => (
             <li key={pr.number} className="pr-item">
               <a href={pr.url} target="_blank" rel="noopener noreferrer" className="pr-number">
                 #{pr.number}
               </a>
               <span className="pr-title">{pr.title}</span>
+              {pr.additions != null && (
+                <span className="pr-loc">
+                  <span className="loc-add">+{pr.additions}</span>
+                  <span className="loc-del">-{pr.deletions}</span>
+                </span>
+              )}
               {pr.days_open != null && (
                 <span className="pr-days">{pr.days_open}d</span>
               )}
@@ -396,7 +404,7 @@ function App() {
           {activeTeam.merged.length > 0 && (
             <>
               <div className="pr-section-title">
-                Merged ({activeTeam.merged.length})
+                Contributors — Merged ({activeTeam.merged.length} PRs)
               </div>
               {groupByAuthor(activeTeam.merged).map((g) => (
                 <AuthorGroup key={g.author} author={g.author} items={g.items} type="merged" />
@@ -407,7 +415,7 @@ function App() {
           {activeTeam.open.length > 0 && (
             <>
               <div className="pr-section-title">
-                Open ({activeTeam.open.length})
+                Contributors — In Review ({activeTeam.open.length} PRs)
               </div>
               {groupByAuthor(activeTeam.open).map((g) => (
                 <AuthorGroup key={g.author} author={g.author} items={g.items} type="open" />
