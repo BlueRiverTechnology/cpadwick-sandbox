@@ -79,6 +79,30 @@ A PR may have multiple `prg:` labels — count it under each team. PRs with no
 
 Within each team, separate merged and open PRs.
 
+#### Robotech override (author-based split)
+
+There is no `prg:robotech` label in GitHub. Instead, split Robotech out of
+Shasta by **author**. Any PR labeled `prg:shasta` authored by one of the
+following GitHub handles belongs to the **Robotech** team:
+
+- `brt-brennan-coslett`
+- `brt-sarah-newman`
+- `jameskuszmaul-brt`
+- `omarmanzano-brt`
+- `debbieguo`
+- `sanjaynarayanan-brt`
+- `tamdo-brt`
+- `rajshah-brt`
+
+Also match any PR whose title starts with `robotech:` (case-insensitive).
+
+Create a separate team entry for Robotech with:
+- `id`: `"robotech"`
+- `name`: `"Robotech"`
+- `description`: `"Robotics platform (BSP, VPU, AOS)"`
+
+Remove matched PRs from Shasta's counts and arrays.
+
 ### Step 4: Generate the executive summary
 
 Write the report in the following format:
@@ -124,6 +148,19 @@ For each active team, write a section like:
   per team. Aggressively group and roll up — leadership doesn't want 200 bullets.
 - **Order teams by activity**: List the team with the most merged PRs first.
 
+## Team Summary Detail Guidelines
+
+The `summary` field for each team (in both JSON and Markdown) should be **more
+detailed than a simple 2-sentence overview**. Specifically:
+
+1. **Identify work-streams**: Cluster the team's PRs into 3-6 logical work-streams
+   based on title prefixes, shared subsystems, or related functionality (e.g.,
+   "CI/Build", "BSP releases", "Camera firmware", "Weed pressure logic").
+2. **Describe each work-stream**: For each cluster, write 1-2 sentences explaining
+   what was accomplished and why it matters. Include the count of PRs.
+3. **Keep total length reasonable**: 4-8 sentences per team. Enough to answer
+   "what were the CI improvements?" without requiring drill-down.
+
 ## Error Handling
 
 - If `gh` CLI is not authenticated, tell the user to run `gh auth login`
@@ -165,7 +202,7 @@ After generating the summary, save **two files** to the `reports/` directory:
       "open_count": 60,
       "avg_days_to_merge": 1.8,
       "median_days_to_merge": 1.2,
-      "summary": "LLM-generated 2-3 sentence team narrative. Focus on outcomes.",
+      "summary": "LLM-generated team narrative. Group PRs by work-stream and describe each stream. See detail guidelines below.",
       "merged": [
         {
           "number": 11571,

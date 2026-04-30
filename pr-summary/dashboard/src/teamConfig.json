@@ -1,0 +1,21 @@
+{
+  "overrides": [
+    {
+      "id": "robotech",
+      "name": "Robotech",
+      "description": "Robotics platform (BSP, VPU, AOS)",
+      "sourceTeam": "shasta",
+      "matchAuthors": [
+        "brt-brennan-coslett",
+        "brt-sarah-newman",
+        "jameskuszmaul-brt",
+        "omarmanzano-brt",
+        "debbieguo",
+        "sanjaynarayanan-brt",
+        "tamdo-brt",
+        "rajshah-brt"
+      ],
+      "matchTitlePrefixes": ["robotech:"]
+    }
+  ]
+}
