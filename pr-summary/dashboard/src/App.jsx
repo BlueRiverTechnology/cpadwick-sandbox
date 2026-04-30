@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import teamConfig from './teamConfig.json';
 
 function applyTeamOverrides(data) {
@@ -227,6 +227,13 @@ function App() {
   const [data, setData] = useState(null);
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const detailRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedTeam && detailRef.current) {
+      detailRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedTeam]);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -350,7 +357,7 @@ function App() {
       </div>{/* main-row */}
 
       {activeTeam && (
-        <div className="team-detail">
+        <div className="team-detail" ref={detailRef}>
           <div className="detail-header">
             <h2>
               {activeTeam.name}{' '}
