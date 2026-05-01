@@ -1,9 +1,129 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
+import teamConfig from './teamConfig.json';
+import mbtConfig from './mbtConfig.json';
+
+function applyTeamOverrides(data) {
+  if (!teamConfig.overrides || !teamConfig.overrides.length) return data;
+
+  const newTeams = [...data.teams];
+  const teamsToAdd = [];
+
+  for (const override of teamConfig.overrides) {
+    const sourceIdx = newTeams.findIndex((t) => t.id === override.sourceTeam);
+    if (sourceIdx === -1) continue;
+
+    const source = newTeams[sourceIdx];
+    const prefixes = (override.matchTitlePrefixes || []).map((p) => p.toLowerCase());
+    const authors = new Set(override.matchAuthors || []);
+
+    const matches = (pr) =>
+      authors.has(pr.author) ||
+      prefixes.some((p) => pr.title.toLowerCase().startsWith(p));
+
+    const movedMerged = source.merged.filter(matches);
+    const movedOpen = source.open.filter(matches);
+
+    if (movedMerged.length === 0 && movedOpen.length === 0) continue;
+
+    // Remove moved PRs from source
+    const remainingMerged = source.merged.filter((pr) => !matches(pr));
+    const remainingOpen = source.open.filter((pr) => !matches(pr));
+
+    const calcAvg = (prs) => {
+      const withDays = prs.filter((pr) => pr.days_open != null);
+      return withDays.length ? +(withDays.reduce((s, pr) => s + pr.days_open, 0) / withDays.length).toFixed(1) : null;
+    };
+    const calcMedian = (prs) => {
+      const days = prs.filter((pr) => pr.days_open != null).map((pr) => pr.days_open).sort((a, b) => a - b);
+      if (!days.length) return null;
+      const mid = Math.floor(days.length / 2);
+      return +(days.length % 2 ? days[mid] : (days[mid - 1] + days[mid]) / 2).toFixed(1);
+    };
+
+    // Update source team
+    newTeams[sourceIdx] = {
+      ...source,
+      merged: remainingMerged,
+      open: remainingOpen,
+      merged_count: remainingMerged.length,
+      open_count: remainingOpen.length,
+      avg_days_to_merge: calcAvg(remainingMerged),
+      median_days_to_merge: calcMedian(remainingMerged),
+    };
+
+    // Create new team
+    teamsToAdd.push({
+      id: override.id,
+      name: override.name,
+      description: override.description,
+      merged: movedMerged,
+      open: movedOpen,
+      merged_count: movedMerged.length,
+      open_count: movedOpen.length,
+      avg_days_to_merge: calcAvg(movedMerged),
+      median_days_to_merge: calcMedian(movedMerged),
+      summary: `Split from ${source.name} based on team membership.`,
+    });
+  }
+
+  const allTeams = [...newTeams, ...teamsToAdd].sort((a, b) => (b.merged_count + b.open_count) - (a.merged_count + a.open_count));
+
+  return {
+    ...data,
+    teams: allTeams,
+    summary: {
+      ...data.summary,
+      team_count: allTeams.length,
+    },
+  };
+}
 
 const TEAM_COLORS = [
   '#6366f1', '#22c55e', '#3b82f6', '#f97316', '#eab308',
   '#ec4899', '#14b8a6', '#a855f7', '#f43f5e',
 ];
+
+function inlineBold(text) {
+  if (!text) return null;
+  const parts = text.split(/(\*\*.*?\*\*)/);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
+function renderMarkdown(text, compact) {
+  if (!text) return null;
+  // Split into intro sentence + work-stream bullets on **Header** pattern
+  const segments = text.split(/(?=\*\*[^*]+\*\*\s*\()/);
+  if (segments.length <= 1) return <span>{inlineBold(text)}</span>;
+
+  const intro = segments[0].trim();
+  const streams = segments.slice(1);
+
+  if (compact) {
+    // Table view: just show intro + stream count
+    return (
+      <span>
+        {inlineBold(intro)}{' '}
+        <span className="stream-count">{streams.length} work-streams</span>
+      </span>
+    );
+  }
+
+  return (
+    <div className="summary-structured">
+      <p className="summary-intro">{inlineBold(intro)}</p>
+      <ul className="summary-streams">
+        {streams.map((s, i) => (
+          <li key={i}>{inlineBold(s.trim())}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 function PieChart({ teams }) {
   const total = teams.reduce((s, t) => s + t.merged_count + t.open_count, 0);
@@ -69,30 +189,81 @@ function groupByAuthor(prs) {
   }
   return Object.entries(map)
     .map(([author, items]) => ({ author, items }))
-    .sort((a, b) => b.items.length - a.items.length);
+    .sort((a, b) => a.author.localeCompare(b.author));
+}
+
+function groupByMbt(prs) {
+  const groups = {};
+  for (const mbt of mbtConfig.mbts) {
+    groups[mbt.id] = [];
+  }
+  groups['other'] = [];
+
+  for (const pr of prs) {
+    const mbts = mbtConfig.authorToMbt[pr.author];
+    if (mbts && mbts.length > 0) {
+      for (const mbtId of mbts) {
+        groups[mbtId].push(pr);
+      }
+    } else {
+      groups['other'].push(pr);
+    }
+  }
+  return groups;
+}
+
+function MbtSection({ mbtId, name, description, prs, type, summary }) {
+  const [open, setOpen] = useState(true);
+  if (prs.length === 0) return null;
+  return (
+    <div className="mbt-section">
+      <button className="mbt-header" onClick={() => setOpen(!open)}>
+        <span className={`author-chevron ${open ? 'open' : ''}`}>▸</span>
+        <span className="mbt-name">{name}</span>
+        <span className="mbt-desc">{description}</span>
+        <span className={`badge ${type}`}>{prs.length}</span>
+      </button>
+      {open && (
+        <>
+          {summary && <div className="mbt-summary">{summary}</div>}
+          {groupByAuthor(prs).map((g) => (
+            <AuthorGroup key={g.author} author={g.author} items={g.items} type={type} />
+          ))}
+        </>
+      )}
+    </div>
+  );
 }
 
 function AuthorGroup({ author, items, type }) {
   const [open, setOpen] = useState(false);
-  const avgDays = type === 'merged' && items.some((pr) => pr.days_open != null)
-    ? (items.reduce((s, pr) => s + (pr.days_open || 0), 0) / items.length).toFixed(1)
-    : null;
   return (
     <div className="author-group">
       <button className="author-row" onClick={() => setOpen(!open)}>
         <span className={`author-chevron ${open ? 'open' : ''}`}>▸</span>
         <span className="author-name">{author}</span>
-        {avgDays && <span className="author-avg">{avgDays}d avg</span>}
         <span className={`badge ${type}`}>{items.length} {type === 'merged' ? 'merged' : 'open'}</span>
       </button>
       {open && (
         <ul className="pr-list author-prs">
+          <li className="pr-list-header">
+            <span className="pr-number">PR</span>
+            <span className="pr-title">Title</span>
+            <span className="pr-loc">Lines</span>
+            <span className="pr-days">Days open</span>
+          </li>
           {items.map((pr) => (
             <li key={pr.number} className="pr-item">
               <a href={pr.url} target="_blank" rel="noopener noreferrer" className="pr-number">
                 #{pr.number}
               </a>
               <span className="pr-title">{pr.title}</span>
+              {pr.additions != null && (
+                <span className="pr-loc">
+                  <span className="loc-add">+{pr.additions}</span>
+                  <span className="loc-del">-{pr.deletions}</span>
+                </span>
+              )}
               {pr.days_open != null && (
                 <span className="pr-days">{pr.days_open}d</span>
               )}
@@ -108,6 +279,13 @@ function App() {
   const [data, setData] = useState(null);
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const detailRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedTeam && detailRef.current) {
+      detailRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedTeam]);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -117,7 +295,7 @@ function App() {
   useEffect(() => {
     fetch('./data.json')
       .then((r) => r.json())
-      .then(setData)
+      .then((raw) => setData(applyTeamOverrides(raw)))
       .catch((err) => console.error('Failed to load data:', err));
   }, []);
 
@@ -182,7 +360,7 @@ function App() {
                 onClick={() => setSelectedTeam(selectedTeam === team.id ? null : team.id)}
               >
                 <td className="hl-team" style={{ color: TEAM_COLORS[i % TEAM_COLORS.length] }}>{team.name}</td>
-                <td className="hl-summary">{team.summary}</td>
+                <td className="hl-summary">{renderMarkdown(team.summary, false)}</td>
                 <td className="hl-count"><span className="badge merged">{team.merged_count}</span></td>
                 <td className="hl-count"><span className="badge open">{team.open_count}</span></td>
               </tr>
@@ -231,7 +409,7 @@ function App() {
       </div>{/* main-row */}
 
       {activeTeam && (
-        <div className="team-detail">
+        <div className="team-detail" ref={detailRef}>
           <div className="detail-header">
             <h2>
               {activeTeam.name}{' '}
@@ -265,27 +443,82 @@ function App() {
               </div>
             )}
           </div>
-          <p className="detail-summary">{activeTeam.summary}</p>
+          <div className="detail-summary">{renderMarkdown(activeTeam.summary, false)}</div>
 
-          {activeTeam.merged.length > 0 && (
+          {activeTeam.id === 'shasta' ? (
             <>
-              <div className="pr-section-title">
-                Merged ({activeTeam.merged.length})
-              </div>
-              {groupByAuthor(activeTeam.merged).map((g) => (
-                <AuthorGroup key={g.author} author={g.author} items={g.items} type="merged" />
-              ))}
+              {activeTeam.merged.length > 0 && (
+                <>
+                  <div className="pr-section-title">
+                    MBTs — Merged ({activeTeam.merged.length} PRs)
+                  </div>
+                  {(() => {
+                    const groups = groupByMbt(activeTeam.merged);
+                    const mbtSummaries = {};
+                    if (activeTeam.mbt_groups) {
+                      for (const g of activeTeam.mbt_groups) {
+                        mbtSummaries[g.id] = g.summary;
+                      }
+                    }
+                    return (
+                      <>
+                        {mbtConfig.mbts.map((mbt) => (
+                          <MbtSection key={mbt.id} mbtId={mbt.id} name={mbt.name} description={mbt.description} prs={groups[mbt.id]} type="merged" summary={mbtSummaries[mbt.id]} />
+                        ))}
+                        <MbtSection mbtId="other" name="Other" description="Unmapped contributors" prs={groups['other']} type="merged" />
+                      </>
+                    );
+                  })()}
+                </>
+              )}
+              {activeTeam.open.length > 0 && (
+                <>
+                  <div className="pr-section-title">
+                    MBTs — In Review ({activeTeam.open.length} PRs)
+                  </div>
+                  {(() => {
+                    const groups = groupByMbt(activeTeam.open);
+                    const mbtSummaries = {};
+                    if (activeTeam.mbt_groups) {
+                      for (const g of activeTeam.mbt_groups) {
+                        mbtSummaries[g.id] = g.summary;
+                      }
+                    }
+                    return (
+                      <>
+                        {mbtConfig.mbts.map((mbt) => (
+                          <MbtSection key={mbt.id} mbtId={mbt.id} name={mbt.name} description={mbt.description} prs={groups[mbt.id]} type="open" summary={mbtSummaries[mbt.id]} />
+                        ))}
+                        <MbtSection mbtId="other" name="Other" description="Unmapped contributors" prs={groups['other']} type="open" />
+                      </>
+                    );
+                  })()}
+                </>
+              )}
             </>
-          )}
-
-          {activeTeam.open.length > 0 && (
+          ) : (
             <>
-              <div className="pr-section-title">
-                Open ({activeTeam.open.length})
-              </div>
-              {groupByAuthor(activeTeam.open).map((g) => (
-                <AuthorGroup key={g.author} author={g.author} items={g.items} type="open" />
-              ))}
+              {activeTeam.merged.length > 0 && (
+                <>
+                  <div className="pr-section-title">
+                    Contributors — Merged ({activeTeam.merged.length} PRs)
+                  </div>
+                  {groupByAuthor(activeTeam.merged).map((g) => (
+                    <AuthorGroup key={g.author} author={g.author} items={g.items} type="merged" />
+                  ))}
+                </>
+              )}
+
+              {activeTeam.open.length > 0 && (
+                <>
+                  <div className="pr-section-title">
+                    Contributors — In Review ({activeTeam.open.length} PRs)
+                  </div>
+                  {groupByAuthor(activeTeam.open).map((g) => (
+                    <AuthorGroup key={g.author} author={g.author} items={g.items} type="open" />
+                  ))}
+                </>
+              )}
             </>
           )}
         </div>
@@ -310,7 +543,7 @@ function App() {
                 <span className="badge duration">{team.median_days_to_merge}d median</span>
               )}
             </div>
-            <div className="team-summary">{team.summary}</div>
+            <div className="team-summary">{renderMarkdown(team.summary, true)}</div>
           </div>
         ))}
       </div>

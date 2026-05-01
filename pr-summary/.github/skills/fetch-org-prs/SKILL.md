@@ -88,6 +88,28 @@ gh api \
   }'
 ```
 
+### Fetch lines of code (additions/deletions)
+
+The search API does not return LOC data. Use `gh pr list` to enrich PRs with
+`additions`, `deletions`, and `changedFiles`:
+
+```bash
+# Merged PRs LOC
+gh pr list --repo BlueRiverTechnology/brt \
+  --state merged --search "merged:>=${SINCE_DATE}" \
+  --json number,additions,deletions,changedFiles \
+  --limit 500
+
+# Open PRs LOC
+gh pr list --repo BlueRiverTechnology/brt \
+  --state open --search "created:>=${SINCE_DATE}" \
+  --json number,additions,deletions,changedFiles \
+  --limit 500
+```
+
+Join by PR number to add `additions`, `deletions`, and `changed_files` fields
+to each PR in the output JSON.
+
 ## Group by label
 
 For each PR, extract labels matching `prg:*`. Group PRs by that label. PRs with

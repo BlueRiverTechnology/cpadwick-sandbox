@@ -184,6 +184,19 @@ a:hover {
 .hl-summary {
   color: var(--text-muted);
   line-height: 1.5;
+  font-size: 0.82rem;
+}
+.hl-summary .summary-intro {
+  font-size: 0.82rem;
+  margin-bottom: 0.3rem;
+}
+.hl-summary .summary-streams {
+  font-size: 0.8rem;
+  padding-left: 1rem;
+  margin: 0;
+}
+.hl-summary .summary-streams li {
+  margin-bottom: 0.2rem;
 }
 .hl-count {
   white-space: nowrap;
@@ -333,6 +346,33 @@ a:hover {
   margin-bottom: 1.25rem;
   line-height: 1.6;
 }
+.summary-structured {
+  margin: 0;
+}
+.summary-intro {
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+  font-weight: 500;
+}
+.summary-streams {
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+  list-style: disc;
+}
+.summary-streams li {
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+.summary-streams li strong {
+  color: var(--text);
+}
+.stream-count {
+  font-size: 0.75rem;
+  background: var(--border);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  color: var(--text-muted);
+}
 
 .pr-section-title {
   font-size: 0.75rem;
@@ -360,11 +400,39 @@ a:hover {
   padding: 0.35rem 0;
   line-height: 1.4;
 }
+.pr-list-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  padding: 0.2rem 0 0.3rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.25rem;
+  list-style: none;
+}
+.pr-list-header .pr-number {
+  flex-shrink: 0;
+  white-space: nowrap;
+  width: 4.5rem;
+}
+.pr-list-header .pr-title {
+  flex: 1;
+}
+.pr-list-header .pr-days {
+  flex-shrink: 0;
+  white-space: nowrap;
+  width: 5rem;
+  text-align: right;
+}
 .pr-item .pr-number {
   color: var(--accent-light);
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
+  width: 4.5rem;
 }
 .pr-item .pr-title {
   color: var(--text);
@@ -379,6 +447,23 @@ a:hover {
   font-size: 0.75rem;
   white-space: nowrap;
   flex-shrink: 0;
+  width: 5rem;
+  text-align: right;
+}
+.pr-item .pr-loc,
+.pr-list-header .pr-loc {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 7rem;
+  text-align: right;
+}
+.loc-add {
+  color: var(--green);
+  margin-right: 0.3rem;
+}
+.loc-del {
+  color: #e55;
 }
 .pr-item .pr-author {
   color: var(--text-muted);
@@ -517,6 +602,50 @@ a:hover {
   margin-top: 0.25rem;
   margin-bottom: 0.5rem;
   border-left: 2px solid var(--border);
+}
+
+/* MBT sub-sections (Shasta only) */
+.mbt-section {
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.mbt-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: var(--surface-hover);
+  border: none;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.85rem;
+  text-align: left;
+  transition: background 0.15s;
+}
+.mbt-header:hover {
+  background: var(--border);
+}
+.mbt-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.mbt-desc {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  flex: 1;
+}
+.mbt-section .author-group {
+  padding-left: 0.5rem;
+}
+.mbt-summary {
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border);
 }
 
 /* Main row: table + charts side by side */

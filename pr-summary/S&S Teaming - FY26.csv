@@ -1,0 +1,59 @@
+"Green = Confirmed, do not change",,Bold are folks across multiple MBTs,,,,,,,,,,,,,
+,,,Mission Leads,,,,,,,,,,,,
+Team,Mission,Objectives,Product,Program,Technical,Agronomy,HW,Systems,Robotics SW,Data 5,Data Science,Devops,Embedded,QA,CVML
+Foundation,"Mission: Create a common hardware & software platform to make S&S accessible for every acre, worldwide","Objective 1 - Deliver 2.0: Get the technology to the customer
+Objective 2 - Increase efficiency and reliability of internal tools & processes for machine bring-up
+Objective 3 - Round-out 1.0 feature set - Get Better Over Time = Ruthlessly prioritize to minimize resources
+Foundation Homepage",Omri,Travis,"Trevor
+Colleen
+
+Gabby",Jes (Application Tech),,"Trevor S.
+Jennifer J.
+Raj S.
+Austin R.
+Reid D.
+","Josh, Max, Naman, Brian, Phil, James, Mithun, Pallavi, Colleen, Randy",,,,"Charlie
+Eric F.
+Debbie","Deb (Calibration, Vanilla, SSD, RMA)
+Austin E.
+Joe
+Clare
+Rich",
+Expand,Ensure S&S finds Product Market Fit in new target geographies and crops. ,"Objective 1 - Build and iterate on understanding of strategically important crops, customer segments and features required. Enable delivery of product market fit (PMF) in these areas of interest
+Objective 2 - Build model development capabilities that will deliver crop models for target customers in 2027 and beyond
+Objective 3 - Create automated and cost-efficient data annotation capabilities to unlock USL value for our current and future ML model development, release, and monitoring needs
+Expand Homepage",Shaishvi,Rafi,"Joe S.
+Ryan
+
+Olgert",Michael,"Bennett
+Ryan","Joe S.
+Kevin K.
+Joelle D.",Amoagh,"Brian S
+Henry C
+
+Alexei S
+Dylan K",Will R / Silvana / Josh,,,"Clare B.
+Rich B. (sampleverse, USL, ATM, MTR)","Victor L
+Ajay P
+Nathan C
+Andy S
+JJ F
+Josh T
+Otto J"
+Unlock,Increase the value of S&S for the Early Adopter & Early Majority customer,"Objective 1 - Unlock more passes of S&S tech in fallow, corn, cotton, soybean, and small grains production systems
+Objective 2 - Create new actionable insights (from P0 crop in regions where we currently S&S)  for the customer that add value
+Unlock Homepage",Britsy,Lexi,Quan,Michael ,,Jack L. ,"Kiran
+Zeb",,Josh,,,"Joe B. (Mapping, and VR features)","Anu
+Uma"
+Enabling Tech,Enable and accelerate our teams to develop and deploy high quality solutions to our customers.,"Objective -  Increase the speed of development and testing while improving quality for See & Spray software
+Enabling Tech Homepage",Omri,Ken,Dan,,,"Austin R. (Test Infrastructure)
+Kevin K. (Spyglass, SAM)
+Joelle D. (Data)",Chong,,"Silvana
+","Dhanush S
+Ryan C
+(Some percent of their time)",,"QA Automation Folks
+
+Caio M.
+Rakhi M.
+Yuchun L.
+Contractors",

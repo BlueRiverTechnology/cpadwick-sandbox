@@ -1,0 +1,49 @@
+{
+  "mbts": [
+    {
+      "id": "foundation",
+      "name": "Foundation",
+      "description": "Common HW/SW platform for S&S"
+    },
+    {
+      "id": "expand",
+      "name": "Expand",
+      "description": "New geographies & crops"
+    },
+    {
+      "id": "unlock",
+      "name": "Unlock",
+      "description": "Increase S&S value for customers"
+    },
+    {
+      "id": "enabling_tech",
+      "name": "Enabling Tech",
+      "description": "Accelerate dev/deploy & quality"
+    }
+  ],
+  "authorToMbt": {
+    "maxwellgumley-brt": ["foundation"],
+    "brt-Naman-Gupta": ["foundation"],
+    "brian-griglak": ["foundation"],
+    "philsc": ["foundation"],
+    "pallavi-brt": ["foundation"],
+    "brt-colleen": ["foundation"],
+    "randy-schur-brt": ["foundation"],
+    "joshredding-brt": ["foundation"],
+    "austinroepke-brt": ["foundation", "enabling_tech"],
+    "kevinkreher-brt": ["expand", "enabling_tech"],
+    "brt-amoagh-gopinath": ["expand"],
+    "brt-brian-smartt": ["expand"],
+    "brt-henry": ["expand"],
+    "brt-alexei": ["expand"],
+    "brtdylan": ["expand"],
+    "ajaypbrt": ["expand"],
+    "brt-clare-bagley": ["expand", "unlock"],
+    "richbiggs": ["expand", "unlock"],
+    "kiran-mohan-brt": ["unlock"],
+    "zwheeler": ["unlock"],
+    "brtanuradhachandrashekar": ["unlock"],
+    "brt-Yuchun-Liu": ["enabling_tech"],
+    "ryancalhoun-brt": ["enabling_tech"]
+  }
+}
