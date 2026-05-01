@@ -125,6 +125,40 @@ Create a separate team entry for Robotech with:
 
 Remove matched PRs from Shasta's counts and arrays.
 
+#### MBT sub-groups within Shasta
+
+After splitting out Robotech, further group remaining Shasta PRs into MBTs
+(Mission-Based Teams) by author. The MBT assignments are:
+
+| MBT | ID | Authors |
+|-----|----|---------|
+| Foundation | `foundation` | `maxwellgumley-brt`, `brt-Naman-Gupta`, `brian-griglak`, `philsc`, `pallavi-brt`, `brt-colleen`, `randy-schur-brt`, `joshredding-brt`, `austinroepke-brt` |
+| Expand | `expand` | `kevinkreher-brt`, `brt-amoagh-gopinath`, `brt-brian-smartt`, `brt-henry`, `brt-alexei`, `brtdylan`, `ajaypbrt`, `brt-clare-bagley`, `richbiggs` |
+| Unlock | `unlock` | `kiran-mohan-brt`, `zwheeler`, `brtanuradhachandrashekar`, `brt-clare-bagley`, `richbiggs` |
+| Enabling Tech | `enabling_tech` | `austinroepke-brt`, `kevinkreher-brt`, `brt-Yuchun-Liu`, `ryancalhoun-brt` |
+
+Some authors appear in multiple MBTs — count their PRs under each assigned MBT.
+PRs from authors not in this table go into an "Other" sub-group.
+
+In the JSON output, the Shasta team entry must include an `mbt_groups` array:
+
+```json
+"mbt_groups": [
+  {
+    "id": "foundation",
+    "name": "Foundation",
+    "description": "Common HW/SW platform for S&S",
+    "merged_count": 40,
+    "open_count": 20,
+    "summary": "1-3 sentence summary of what this MBT shipped this week."
+  },
+  ...
+]
+```
+
+Generate a concise summary (1-3 sentences) for each MBT sub-group based on its
+PRs. Focus on what was accomplished. If an MBT has 0 PRs, omit it.
+
 ### Step 4: Generate the executive summary
 
 Write the report in the following format:
@@ -172,16 +206,27 @@ For each active team, write a section like:
 
 ## Team Summary Detail Guidelines
 
-The `summary` field for each team (in both JSON and Markdown) should be **more
-detailed than a simple 2-sentence overview**. Specifically:
+The `summary` field for each team (in both JSON and Markdown) should have **two
+parts**:
 
-1. **Identify work-streams**: Cluster the team's PRs into 3-6 logical work-streams
-   based on title prefixes, shared subsystems, or related functionality (e.g.,
-   "CI/Build", "BSP releases", "Camera firmware", "Weed pressure logic").
-2. **Describe each work-stream**: For each cluster, write 1-2 sentences explaining
-   what was accomplished and why it matters. Include the count of PRs.
-3. **Keep total length reasonable**: 4-8 sentences per team. Enough to answer
-   "what were the CI improvements?" without requiring drill-down.
+1. **Executive intro** (2-3 sentences): What did this team accomplish overall?
+   Lead with impact and outcomes. This is what a VP reads to understand the team's
+   week without drilling into work-streams. Example: "Shasta focused on platform
+   reliability and expanding treatment capabilities this period. Major efforts went
+   into sensor fault handling, SHARK test coverage, and preparing for canopy mode
+   on Gen2 systems."
+
+2. **Work-stream breakdown**: After the intro, cluster PRs into 3-6 logical
+   work-streams with `**Name** (N PRs) —` formatting. Each work-stream gets 1
+   sentence explaining what was accomplished. Example:
+   `**Shark/MQTT** (13 PRs) — expanded SHARK test coverage and gated startup
+   capabilities on MQTT translator readiness.`
+
+Format the summary as a single string with the intro first, then work-streams
+separated by spaces. Use `**bold**` for work-stream names. The dashboard renders
+the `**bold** (N PRs) —` pattern as bullet points automatically.
+
+Total length: 6-12 sentences per team (intro + work-streams).
 
 ## Error Handling
 
@@ -225,6 +270,16 @@ After generating the summary, save **two files** to the `reports/` directory:
       "avg_days_to_merge": 1.8,
       "median_days_to_merge": 1.2,
       "summary": "LLM-generated team narrative. Group PRs by work-stream and describe each stream. See detail guidelines below.",
+      "mbt_groups": [
+        {
+          "id": "foundation",
+          "name": "Foundation",
+          "description": "Common HW/SW platform for S&S",
+          "merged_count": 40,
+          "open_count": 20,
+          "summary": "Short narrative of Foundation's accomplishments this week."
+        }
+      ],
       "merged": [
         {
           "number": 11571,
@@ -259,5 +314,6 @@ After generating the summary, save **two files** to the `reports/` directory:
 
 1. Create the `reports/` directory if it does not exist.
 2. Write the JSON file first, then the Markdown file.
-3. Display the Markdown summary in the chat response.
-4. Confirm both file paths to the user.
+3. Also copy the JSON to `dashboard/public/data.json` (the dashboard serves this).
+4. Display the Markdown summary in the chat response.
+5. Confirm both file paths to the user.

@@ -604,6 +604,50 @@ a:hover {
   border-left: 2px solid var(--border);
 }
 
+/* MBT sub-sections (Shasta only) */
+.mbt-section {
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.mbt-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: var(--surface-hover);
+  border: none;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.85rem;
+  text-align: left;
+  transition: background 0.15s;
+}
+.mbt-header:hover {
+  background: var(--border);
+}
+.mbt-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.mbt-desc {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  flex: 1;
+}
+.mbt-section .author-group {
+  padding-left: 0.5rem;
+}
+.mbt-summary {
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border);
+}
+
 /* Main row: table + charts side by side */
 .main-row {
   display: grid;

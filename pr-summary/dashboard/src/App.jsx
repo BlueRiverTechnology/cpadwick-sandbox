@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import teamConfig from './teamConfig.json';
+import mbtConfig from './mbtConfig.json';
 
 function applyTeamOverrides(data) {
   if (!teamConfig.overrides || !teamConfig.overrides.length) return data;
@@ -189,6 +190,49 @@ function groupByAuthor(prs) {
   return Object.entries(map)
     .map(([author, items]) => ({ author, items }))
     .sort((a, b) => a.author.localeCompare(b.author));
+}
+
+function groupByMbt(prs) {
+  const groups = {};
+  for (const mbt of mbtConfig.mbts) {
+    groups[mbt.id] = [];
+  }
+  groups['other'] = [];
+
+  for (const pr of prs) {
+    const mbts = mbtConfig.authorToMbt[pr.author];
+    if (mbts && mbts.length > 0) {
+      for (const mbtId of mbts) {
+        groups[mbtId].push(pr);
+      }
+    } else {
+      groups['other'].push(pr);
+    }
+  }
+  return groups;
+}
+
+function MbtSection({ mbtId, name, description, prs, type, summary }) {
+  const [open, setOpen] = useState(true);
+  if (prs.length === 0) return null;
+  return (
+    <div className="mbt-section">
+      <button className="mbt-header" onClick={() => setOpen(!open)}>
+        <span className={`author-chevron ${open ? 'open' : ''}`}>▸</span>
+        <span className="mbt-name">{name}</span>
+        <span className="mbt-desc">{description}</span>
+        <span className={`badge ${type}`}>{prs.length}</span>
+      </button>
+      {open && (
+        <>
+          {summary && <div className="mbt-summary">{summary}</div>}
+          {groupByAuthor(prs).map((g) => (
+            <AuthorGroup key={g.author} author={g.author} items={g.items} type={type} />
+          ))}
+        </>
+      )}
+    </div>
+  );
 }
 
 function AuthorGroup({ author, items, type }) {
@@ -401,25 +445,80 @@ function App() {
           </div>
           <div className="detail-summary">{renderMarkdown(activeTeam.summary, false)}</div>
 
-          {activeTeam.merged.length > 0 && (
+          {activeTeam.id === 'shasta' ? (
             <>
-              <div className="pr-section-title">
-                Contributors — Merged ({activeTeam.merged.length} PRs)
-              </div>
-              {groupByAuthor(activeTeam.merged).map((g) => (
-                <AuthorGroup key={g.author} author={g.author} items={g.items} type="merged" />
-              ))}
+              {activeTeam.merged.length > 0 && (
+                <>
+                  <div className="pr-section-title">
+                    MBTs — Merged ({activeTeam.merged.length} PRs)
+                  </div>
+                  {(() => {
+                    const groups = groupByMbt(activeTeam.merged);
+                    const mbtSummaries = {};
+                    if (activeTeam.mbt_groups) {
+                      for (const g of activeTeam.mbt_groups) {
+                        mbtSummaries[g.id] = g.summary;
+                      }
+                    }
+                    return (
+                      <>
+                        {mbtConfig.mbts.map((mbt) => (
+                          <MbtSection key={mbt.id} mbtId={mbt.id} name={mbt.name} description={mbt.description} prs={groups[mbt.id]} type="merged" summary={mbtSummaries[mbt.id]} />
+                        ))}
+                        <MbtSection mbtId="other" name="Other" description="Unmapped contributors" prs={groups['other']} type="merged" />
+                      </>
+                    );
+                  })()}
+                </>
+              )}
+              {activeTeam.open.length > 0 && (
+                <>
+                  <div className="pr-section-title">
+                    MBTs — In Review ({activeTeam.open.length} PRs)
+                  </div>
+                  {(() => {
+                    const groups = groupByMbt(activeTeam.open);
+                    const mbtSummaries = {};
+                    if (activeTeam.mbt_groups) {
+                      for (const g of activeTeam.mbt_groups) {
+                        mbtSummaries[g.id] = g.summary;
+                      }
+                    }
+                    return (
+                      <>
+                        {mbtConfig.mbts.map((mbt) => (
+                          <MbtSection key={mbt.id} mbtId={mbt.id} name={mbt.name} description={mbt.description} prs={groups[mbt.id]} type="open" summary={mbtSummaries[mbt.id]} />
+                        ))}
+                        <MbtSection mbtId="other" name="Other" description="Unmapped contributors" prs={groups['other']} type="open" />
+                      </>
+                    );
+                  })()}
+                </>
+              )}
             </>
-          )}
-
-          {activeTeam.open.length > 0 && (
+          ) : (
             <>
-              <div className="pr-section-title">
-                Contributors — In Review ({activeTeam.open.length} PRs)
-              </div>
-              {groupByAuthor(activeTeam.open).map((g) => (
-                <AuthorGroup key={g.author} author={g.author} items={g.items} type="open" />
-              ))}
+              {activeTeam.merged.length > 0 && (
+                <>
+                  <div className="pr-section-title">
+                    Contributors — Merged ({activeTeam.merged.length} PRs)
+                  </div>
+                  {groupByAuthor(activeTeam.merged).map((g) => (
+                    <AuthorGroup key={g.author} author={g.author} items={g.items} type="merged" />
+                  ))}
+                </>
+              )}
+
+              {activeTeam.open.length > 0 && (
+                <>
+                  <div className="pr-section-title">
+                    Contributors — In Review ({activeTeam.open.length} PRs)
+                  </div>
+                  {groupByAuthor(activeTeam.open).map((g) => (
+                    <AuthorGroup key={g.author} author={g.author} items={g.items} type="open" />
+                  ))}
+                </>
+              )}
             </>
           )}
         </div>

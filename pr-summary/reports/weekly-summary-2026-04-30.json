@@ -3,17 +3,17 @@
     "start": "2026-04-20",
     "end": "2026-04-30"
   },
-  "generated_at": "2026-04-30T21:00:53Z",
+  "generated_at": "2026-05-01T00:03:08+00:00",
   "repo": "BlueRiverTechnology/brt",
   "summary": {
-    "total_merged": 347,
-    "total_open": 212,
+    "total_merged": 337,
+    "total_open": 199,
     "team_count": 10,
-    "avg_days_to_merge": 10.3,
+    "avg_days_to_merge": 9.1,
     "highlights": [
-      "Infrastructure modernized the build system with 14+ bzlmod migrations (gRPC, protobuf, gtest, and more), advancing Bazel 8 readiness across the monorepo.",
-      "Robotech shipped BSP 3.2.1 for both VPU platforms plus the full Phelps MY27 SOP configuration matrix (14 PRs), now broken out as its own team from Shasta.",
-      "Jupiter advanced the Gretzky depth model with multiscale disparity predictions and a new v13.5 training dataset, while Galileo stabilized its automated test pipeline."
+      "Major bzlmod migration across the monorepo \u2014 dozens of third-party deps moved off WORKSPACE files",
+      "BSP 3.2.1 shipped for VPU1 & VPU2 with flash safety improvements (ratchet downgrade prevention)",
+      "Gretzky ML training advanced with multiscale disparity and v13.5 dataset creation"
     ]
   },
   "teams": [
@@ -21,7 +21,25 @@
       "id": "shasta",
       "name": "Shasta",
       "description": "See & Spray platform",
+      "merged_count": 109,
+      "open_count": 64,
+      "avg_days_to_merge": 14.9,
+      "median_days_to_merge": 5.8,
+      "summary": "Shasta focused on platform reliability and expanding treatment capabilities this period. Major efforts went into sensor fault handling, SHARK test coverage, and preparing for canopy mode on Gen2 systems. The team also invested heavily in build infrastructure cleanup and VPU configuration management. **Shark/MQTT** (13 PRs) \u2014 expanded SHARK test coverage, fixed ReadyToLogs tests, and gated startup capabilities on MQTT translator readiness. **Camera & Sensors** (12 PRs) \u2014 fixed IMU stale fault reporting during initialization, cleaned up VR camera config fragments, and added MISSING_NOZZLE_TIP_MAPPING fault to sprayer. **VPU & BSP** (8 PRs) \u2014 bumped VPU1 dev image size, deduplicated Python version variables, and separated output_base locations for CI configurations. **Build/Infra** (10 PRs) \u2014 migrated dependencies to bzlmod, updated CAN messages, and cleaned up unused configs. **SAM & Sprayer Logic** (6 PRs) \u2014 added update_baseline script for RSW SAM and implemented support for canopy mode in Gen2 systems.",
       "merged": [
+        {
+          "number": 11787,
+          "title": "shasta: Fix camera IMU stale fault reporting during initialization (#11663)",
+          "author": "pallavi-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11787",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 1.0,
+          "additions": 27,
+          "deletions": 11,
+          "changed_files": 2
+        },
         {
           "number": 11781,
           "title": "shasta: Fix up an `std::vector::reserve()` call in inference code",
@@ -75,6 +93,19 @@
           "changed_files": 1
         },
         {
+          "number": 11729,
+          "title": "can: Update BoomTracInformation4 message",
+          "author": "brt-colleen",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11729",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 2.2,
+          "additions": 4,
+          "deletions": 6,
+          "changed_files": 2
+        },
+        {
           "number": 11728,
           "title": "shark: Fix ReadyToLogs SHARK test",
           "author": "jocelyn-vil",
@@ -112,6 +143,19 @@
           "additions": 77,
           "deletions": 0,
           "changed_files": 3
+        },
+        {
+          "number": 11685,
+          "title": "shasta: Gate startup capabilities event on MQTT translator ready",
+          "author": "maxwellgumley-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11685",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 3.0,
+          "additions": 347,
+          "deletions": 15,
+          "changed_files": 17
         },
         {
           "number": 11683,
@@ -248,6 +292,19 @@
           "changed_files": 1
         },
         {
+          "number": 11615,
+          "title": "shasta: raven upload checks response status (#11538)",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11615",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 6.2,
+          "additions": 155,
+          "deletions": 9,
+          "changed_files": 4
+        },
+        {
           "number": 11614,
           "title": "buildkite: Git mirrors paramter for elastic stack",
           "author": "ryancalhoun-brt",
@@ -337,6 +394,19 @@
           "additions": 513,
           "deletions": 0,
           "changed_files": 4
+        },
+        {
+          "number": 11547,
+          "title": "shark: add interactive NoStreamIndicator test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11547",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 8.1,
+          "additions": 73,
+          "deletions": 0,
+          "changed_files": 1
         },
         {
           "number": 11546,
@@ -584,6 +654,19 @@
           "additions": 10,
           "deletions": 0,
           "changed_files": 1
+        },
+        {
+          "number": 11423,
+          "title": "shark: add ProdVanillaLocalInstall vanilla test",
+          "author": "jocelyn-vil",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11423",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 10.3,
+          "additions": 293,
+          "deletions": 0,
+          "changed_files": 2
         },
         {
           "number": 11398,
@@ -909,6 +992,19 @@
           "additions": 171,
           "deletions": 1,
           "changed_files": 2
+        },
+        {
+          "number": 11209,
+          "title": "shasta: replace hard-coded SecondaryNozzleOffset with a configuration parameter",
+          "author": "brt-Naman-Gupta",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11209",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 16.2,
+          "additions": 343,
+          "deletions": 337,
+          "changed_files": 14
         },
         {
           "number": 11203,
@@ -1355,6 +1451,54 @@
       ],
       "open": [
         {
+          "number": 11841,
+          "title": "Map CANOPY_AND_GROUND to \"canopied\" mode.",
+          "author": "brt-colleen",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11841",
+          "labels": [
+            "prg:shasta"
+          ],
+          "additions": 72,
+          "deletions": 12,
+          "changed_files": 2
+        },
+        {
+          "number": 11840,
+          "title": "can: Update can parsing for BoomTracInformation4",
+          "author": "brt-colleen",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11840",
+          "labels": [
+            "prg:shasta"
+          ],
+          "additions": 3,
+          "deletions": 0,
+          "changed_files": 1
+        },
+        {
+          "number": 11836,
+          "title": "Use hostname 'mtg' instead of hardcoded IP for Raven MTG address",
+          "author": "brt-amoagh-gopinath",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11836",
+          "labels": [
+            "prg:shasta"
+          ],
+          "additions": 1,
+          "deletions": 1,
+          "changed_files": 1
+        },
+        {
+          "number": 11835,
+          "title": "SampleVerse content package metadata module",
+          "author": "brt-brian-smartt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11835",
+          "labels": [
+            "prg:shasta"
+          ],
+          "additions": 546,
+          "deletions": 1,
+          "changed_files": 5
+        },
+        {
           "number": 11827,
           "title": "Add CloudWatch alarm manager Lambda for image search feature extractor",
           "author": "ajaypbrt",
@@ -1362,7 +1506,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 573,
           "deletions": 0,
           "changed_files": 6
@@ -1375,7 +1518,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 150,
           "deletions": 0,
           "changed_files": 1
@@ -1388,7 +1530,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 9,
           "deletions": 292,
           "changed_files": 21
@@ -1401,7 +1542,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 371,
           "deletions": 0,
           "changed_files": 6
@@ -1414,7 +1554,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 15,
           "deletions": 0,
           "changed_files": 1
@@ -1427,23 +1566,9 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 15,
           "deletions": 0,
           "changed_files": 3
-        },
-        {
-          "number": 11787,
-          "title": "shasta: Fix camera IMU stale fault reporting during initialization (#11663)",
-          "author": "pallavi-brt",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11787",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 27,
-          "deletions": 11,
-          "changed_files": 2
         },
         {
           "number": 11779,
@@ -1454,7 +1579,6 @@
             "prg:shasta",
             "prg:bumblebee"
           ],
-          "days_open": null,
           "additions": 123,
           "deletions": 170,
           "changed_files": 147
@@ -1467,7 +1591,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 123,
           "deletions": 0,
           "changed_files": 3
@@ -1480,7 +1603,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 499,
           "deletions": 2,
           "changed_files": 3
@@ -1493,7 +1615,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 631,
           "deletions": 5,
           "changed_files": 10
@@ -1506,7 +1627,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 18,
           "deletions": 0,
           "changed_files": 1
@@ -1519,7 +1639,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 270,
           "deletions": 1,
           "changed_files": 11
@@ -1532,7 +1651,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 37,
           "deletions": 1,
           "changed_files": 5
@@ -1545,7 +1663,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 111,
           "deletions": 0,
           "changed_files": 1
@@ -1558,7 +1675,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 73,
           "deletions": 0,
           "changed_files": 2
@@ -1571,22 +1687,8 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 15,
           "deletions": 15,
-          "changed_files": 2
-        },
-        {
-          "number": 11729,
-          "title": "can: Update BoomTracInformation4 message",
-          "author": "brt-colleen",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11729",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 4,
-          "deletions": 6,
           "changed_files": 2
         },
         {
@@ -1597,7 +1699,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 56,
           "deletions": 43,
           "changed_files": 3
@@ -1610,23 +1711,9 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 14,
           "deletions": 5,
           "changed_files": 1
-        },
-        {
-          "number": 11685,
-          "title": "shasta: Gate startup capabilities event on MQTT translator ready",
-          "author": "maxwellgumley-brt",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11685",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 347,
-          "deletions": 15,
-          "changed_files": 17
         },
         {
           "number": 11676,
@@ -1636,7 +1723,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 34,
           "deletions": 0,
           "changed_files": 3
@@ -1649,7 +1735,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 1,
           "deletions": 1,
           "changed_files": 1
@@ -1662,7 +1747,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 27,
           "deletions": 0,
           "changed_files": 2
@@ -1675,7 +1759,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 22,
           "deletions": 13,
           "changed_files": 2
@@ -1688,7 +1771,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 10,
           "deletions": 3,
           "changed_files": 2
@@ -1701,7 +1783,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 125,
           "deletions": 63,
           "changed_files": 4
@@ -1714,9 +1795,8 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
-          "additions": 76,
-          "deletions": 111,
+          "additions": 77,
+          "deletions": 102,
           "changed_files": 4
         },
         {
@@ -1727,7 +1807,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 262,
           "deletions": 85,
           "changed_files": 12
@@ -1740,7 +1819,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 513,
           "deletions": 0,
           "changed_files": 2
@@ -1753,7 +1831,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 35446,
           "deletions": 1223,
           "changed_files": 140
@@ -1766,7 +1843,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 9007,
           "deletions": 0,
           "changed_files": 60
@@ -1779,7 +1855,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 777,
           "deletions": 261,
           "changed_files": 16
@@ -1792,23 +1867,9 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 252,
           "deletions": 2,
           "changed_files": 2
-        },
-        {
-          "number": 11615,
-          "title": "shasta: raven upload checks response status (#11538)",
-          "author": "brt-alexei",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11615",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 155,
-          "deletions": 9,
-          "changed_files": 4
         },
         {
           "number": 11609,
@@ -1819,7 +1880,6 @@
             "prg:shasta",
             "prg:bumblebee"
           ],
-          "days_open": null,
           "additions": 454,
           "deletions": 450,
           "changed_files": 246
@@ -1832,7 +1892,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 122,
           "deletions": 12,
           "changed_files": 3
@@ -1845,7 +1904,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 68,
           "deletions": 2,
           "changed_files": 10
@@ -1858,7 +1916,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 1058,
           "deletions": 0,
           "changed_files": 6
@@ -1871,7 +1928,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 332,
           "deletions": 33,
           "changed_files": 20
@@ -1884,7 +1940,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 512,
           "deletions": 73,
           "changed_files": 18
@@ -1897,7 +1952,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 1080,
           "deletions": 1129,
           "changed_files": 198
@@ -1910,7 +1964,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 31,
           "deletions": 34,
           "changed_files": 2
@@ -1923,7 +1976,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 72,
           "deletions": 0,
           "changed_files": 1
@@ -1936,22 +1988,8 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 62,
           "deletions": 1,
-          "changed_files": 1
-        },
-        {
-          "number": 11547,
-          "title": "shark: add interactive NoStreamIndicator test",
-          "author": "jocelyn-vil",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11547",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 73,
-          "deletions": 0,
           "changed_files": 1
         },
         {
@@ -1962,7 +2000,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 149,
           "deletions": 9,
           "changed_files": 11
@@ -1975,7 +2012,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 8,
           "deletions": 1,
           "changed_files": 2
@@ -1988,7 +2024,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 1579,
           "deletions": 37,
           "changed_files": 21
@@ -2001,7 +2036,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 69,
           "deletions": 1,
           "changed_files": 5
@@ -2014,7 +2048,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 339,
           "deletions": 8,
           "changed_files": 3
@@ -2027,7 +2060,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 79,
           "deletions": 9,
           "changed_files": 4
@@ -2040,7 +2072,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 23,
           "deletions": 24,
           "changed_files": 3
@@ -2053,7 +2084,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 528,
           "deletions": 1,
           "changed_files": 5
@@ -2066,7 +2096,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 364,
           "deletions": 79,
           "changed_files": 4
@@ -2079,7 +2108,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 249,
           "deletions": 26,
           "changed_files": 4
@@ -2092,7 +2120,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 72,
           "deletions": 4,
           "changed_files": 2
@@ -2105,7 +2132,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 194,
           "deletions": 13,
           "changed_files": 4
@@ -2118,7 +2144,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 80,
           "deletions": 17,
           "changed_files": 7
@@ -2131,23 +2156,9 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 79,
           "deletions": 1,
           "changed_files": 3
-        },
-        {
-          "number": 11423,
-          "title": "shark: add ProdVanillaLocalInstall vanilla test",
-          "author": "jocelyn-vil",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11423",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 293,
-          "deletions": 0,
-          "changed_files": 2
         },
         {
           "number": 11422,
@@ -2157,7 +2168,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 274,
           "deletions": 3,
           "changed_files": 6
@@ -2170,7 +2180,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 72,
           "deletions": 38,
           "changed_files": 3
@@ -2183,7 +2192,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 686,
           "deletions": 38,
           "changed_files": 8
@@ -2196,7 +2204,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 232,
           "deletions": 0,
           "changed_files": 4
@@ -2209,22 +2216,55 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 339,
           "deletions": 6,
           "changed_files": 3
         }
       ],
-      "merged_count": 102,
-      "open_count": 66,
-      "avg_days_to_merge": 15.5,
-      "median_days_to_merge": 5.8,
-      "summary": "Shasta focused on five main work-streams this period. **Test infrastructure** (12 PRs): Extensive SHARK test automation \u2014 automated ReadyToLogs, CameraFirmwareVersionMismatch, LiveVideo interactive tests, and added new BootstrapCalibration and InstallGrabler tests. **Python/Bazel toolchain** (6 PRs): Migrated default Python version handling, added python3.10 config flag, and deduplicated Python version variables to unblock Python 3.13 upgrade. **Sprayer & diagnostics** (8 PRs): Added MISSING_NOZZLE_TIP_MAPPING fault, disabled weed pressure in Variable Rate mode, fixed realtime malloc in capabilities watcher, and hardened camera IMU stale fault reporting. **Build/CI** (5 PRs): Updated Buildkite git mirrors parameters, fixed PR approval webhook retry, and separated output_base locations for CI. **Cleanup & maintenance** (10+ PRs): Deleted obsolete boomtrac_mode_forwarder, removed ingest_machine_logs.py, extracted MakeDocLog library, and several reverts for stability."
+      "mbt_groups": [
+        {
+          "id": "foundation",
+          "name": "Foundation",
+          "description": "Common HW/SW platform for S&S",
+          "merged_count": 45,
+          "open_count": 22,
+          "summary": "Platform reliability and sensor infrastructure \u2014 fixed camera IMU stale fault reporting, added MISSING_NOZZLE_TIP_MAPPING fault to sprayer, bumped VPU1 dev image size, and updated CAN BoomTracInformation4 messages. Also cleaned up VR camera configs and gated startup capabilities on MQTT translator readiness."
+        },
+        {
+          "id": "expand",
+          "name": "Expand",
+          "description": "New geographies & crops",
+          "merged_count": 26,
+          "open_count": 21,
+          "summary": "Crop model development and data tooling \u2014 supported Implement MTG, built SampleVerse content package messaging, enhanced Raven upload status checks, and added fill method between sparse map vertices. Also removed obsolete ingest_machine_logs.py and worked on prompt_utilities enhancements."
+        },
+        {
+          "id": "unlock",
+          "name": "Unlock",
+          "description": "Increase S&S value for customers",
+          "merged_count": 6,
+          "open_count": 6,
+          "summary": "Customer value features \u2014 added support for canopy mode in Gen2 systems, rewrote boomtrac_mode_module tests, and corrected misleading BSP security check result text."
+        },
+        {
+          "id": "enabling_tech",
+          "name": "Enabling Tech",
+          "description": "Accelerate dev/deploy & quality",
+          "merged_count": 8,
+          "open_count": 12,
+          "summary": "CI/test infrastructure \u2014 updated Buildkite parameters for elastic stack, fixed CORS for BSP/equipment signers, configured LPB21 for SHARK testing, and added wireguard DNS for baker-lpb21."
+        }
+      ]
     },
     {
       "id": "jupiter",
       "name": "Jupiter",
       "description": "Perception / autonomy",
+      "merged_count": 76,
+      "open_count": 48,
+      "avg_days_to_merge": 10.8,
+      "median_days_to_merge": 1.1,
+      "summary": "Jupiter advanced its ML training pipeline and perception testing infrastructure significantly. The Gretzky team shipped multiscale disparity predictions and created the v13.5 training dataset, while Galileo hardened automated test suites. A supply chain security incident (compromised PyPI lightning package) was quickly mitigated. **Gretzky/ML** (22 PRs) \u2014 enabled multiscale disparity predictions for joint LR training, updated class counts for ONNX conversion, created v13.5 training dataset scripts, and fixed implement mask timeout issues. **Galileo/Testing** (18 PRs) \u2014 BSM test bug fixes, updated YAML names, removed 2.0 cases, and uploaded mcap before saving steps history. **Perception Core** (12 PRs) \u2014 added lidar extrinsic checks, tracking IoU polygon utilities, and fixed delta file inputs in subsystem replay. **DevOps/Dependencies** (8 PRs) \u2014 migrated nlohmann_json and opentelemetry-cpp to bzlmod, removed compromised lightning dependency from supply chain attack. **MCAP/Data** (5 PRs) \u2014 enabled mcap compression in SDC and improved recording infrastructure.",
       "merged": [
         {
           "number": 11808,
@@ -3247,6 +3287,45 @@
       ],
       "open": [
         {
+          "number": 11839,
+          "title": "third_party: Bring back lightning",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11839",
+          "labels": [
+            "prg:jupiter",
+            "third_party"
+          ],
+          "additions": 570,
+          "deletions": 21,
+          "changed_files": 4
+        },
+        {
+          "number": 11834,
+          "title": "[ROBOT-4203]: Fix progress_tracker and implement_observation_map_generator_metrics wall clock bugs",
+          "author": "ziyang-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11834",
+          "labels": [
+            "prg:jupiter"
+          ],
+          "additions": 146,
+          "deletions": 16,
+          "changed_files": 9
+        },
+        {
+          "number": 11832,
+          "title": "adk: Make frame mark more flexible [ROBOT-4201]",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11832",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter",
+            "prg:bumblebee"
+          ],
+          "additions": 73,
+          "deletions": 34,
+          "changed_files": 11
+        },
+        {
           "number": 11831,
           "title": "gretzky: Fix em plotting interpolation",
           "author": "deanb-brt",
@@ -3254,7 +3333,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 1,
           "deletions": 1,
           "changed_files": 1
@@ -3268,7 +3346,6 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 202,
           "deletions": 1472,
           "changed_files": 9
@@ -3281,9 +3358,8 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
-          "additions": 25,
-          "deletions": 5,
+          "additions": 27,
+          "deletions": 6,
           "changed_files": 1
         },
         {
@@ -3294,7 +3370,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 116,
           "deletions": 24,
           "changed_files": 2
@@ -3307,7 +3382,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 748,
           "deletions": 9,
           "changed_files": 4
@@ -3320,7 +3394,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 789,
           "deletions": 12,
           "changed_files": 4
@@ -3337,7 +3410,6 @@
             "prg:jupiter",
             "shared"
           ],
-          "days_open": null,
           "additions": 392,
           "deletions": 840,
           "changed_files": 140
@@ -3350,7 +3422,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 9,
           "deletions": 9,
           "changed_files": 2
@@ -3363,7 +3434,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 4,
           "deletions": 0,
           "changed_files": 1
@@ -3377,7 +3447,6 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 162,
           "deletions": 129,
           "changed_files": 6
@@ -3390,7 +3459,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 572,
           "deletions": 36,
           "changed_files": 15
@@ -3404,7 +3472,6 @@
             "prg:jupiter",
             "shared"
           ],
-          "days_open": null,
           "additions": 391,
           "deletions": 2459,
           "changed_files": 55
@@ -3417,10 +3484,9 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
-          "additions": 1225,
+          "additions": 1317,
           "deletions": 3,
-          "changed_files": 21
+          "changed_files": 22
         },
         {
           "number": 11746,
@@ -3430,7 +3496,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 6250,
           "deletions": 6794,
           "changed_files": 138
@@ -3443,7 +3508,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 1,
           "deletions": 1,
           "changed_files": 1
@@ -3457,7 +3521,6 @@
             "prg:jupiter",
             "shared"
           ],
-          "days_open": null,
           "additions": 197,
           "deletions": 14,
           "changed_files": 9
@@ -3470,7 +3533,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 245,
           "deletions": 243,
           "changed_files": 4
@@ -3483,7 +3545,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 124,
           "deletions": 103,
           "changed_files": 5
@@ -3496,7 +3557,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 3154,
           "deletions": 7,
           "changed_files": 23
@@ -3509,7 +3569,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 33,
           "deletions": 4,
           "changed_files": 1
@@ -3522,7 +3581,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 1,
           "deletions": 0,
           "changed_files": 1
@@ -3535,7 +3593,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 20,
           "deletions": 20,
           "changed_files": 2
@@ -3549,7 +3606,6 @@
             "prg:adk",
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 2107,
           "deletions": 21,
           "changed_files": 20
@@ -3563,7 +3619,6 @@
             "prg:adk",
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 319,
           "deletions": 21,
           "changed_files": 7
@@ -3576,7 +3631,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 1838,
           "deletions": 431,
           "changed_files": 5
@@ -3590,7 +3644,6 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 2395,
           "deletions": 2193,
           "changed_files": 59
@@ -3604,7 +3657,6 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 365,
           "deletions": 313,
           "changed_files": 22
@@ -3617,7 +3669,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 6,
           "deletions": 0,
           "changed_files": 1
@@ -3634,7 +3685,6 @@
             "devops",
             "third_party"
           ],
-          "days_open": null,
           "additions": 231,
           "deletions": 104,
           "changed_files": 29
@@ -3647,7 +3697,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 667,
           "deletions": 0,
           "changed_files": 2
@@ -3660,7 +3709,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 2,
           "deletions": 51,
           "changed_files": 5
@@ -3673,7 +3721,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 4,
           "deletions": 19,
           "changed_files": 1
@@ -3686,7 +3733,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 188,
           "deletions": 11,
           "changed_files": 14
@@ -3700,7 +3746,6 @@
             "enhancement",
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 956,
           "deletions": 29,
           "changed_files": 32
@@ -3714,7 +3759,6 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 210,
           "deletions": 43,
           "changed_files": 10
@@ -3728,7 +3772,6 @@
             "prg:jupiter",
             "shared"
           ],
-          "days_open": null,
           "additions": 677,
           "deletions": 5,
           "changed_files": 23
@@ -3742,7 +3785,6 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 658,
           "deletions": 0,
           "changed_files": 3
@@ -3755,7 +3797,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 201,
           "deletions": 145,
           "changed_files": 7
@@ -3768,7 +3809,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 1072,
           "deletions": 145,
           "changed_files": 8
@@ -3783,7 +3823,6 @@
             "prg:jupiter",
             "third_party"
           ],
-          "days_open": null,
           "additions": 281,
           "deletions": 873,
           "changed_files": 57
@@ -3798,7 +3837,6 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 2577,
           "deletions": 292,
           "changed_files": 23
@@ -3812,7 +3850,6 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 60,
           "deletions": 0,
           "changed_files": 6
@@ -3825,7 +3862,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 3881,
           "deletions": 4062,
           "changed_files": 65
@@ -3838,7 +3874,6 @@
           "labels": [
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 83,
           "deletions": 57,
           "changed_files": 6
@@ -3852,22 +3887,21 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 7903,
           "deletions": 1669,
           "changed_files": 106
         }
-      ],
-      "merged_count": 76,
-      "open_count": 45,
-      "avg_days_to_merge": 10.8,
-      "median_days_to_merge": 1.1,
-      "summary": "Jupiter advanced on four key fronts. **Gretzky depth model** (14 PRs): Enabled multiscale disparity predictions for joint LR training, separated SkySupervisedLoss from stereo consistency loss, fixed implement mask timeout, and created v13.5 training dataset with new annotation tooling. **Galileo automated testing** (8 PRs): Fixed duplicate/invalid YAML steps, refactored BSM tests, increased mcap_io test timeouts, and added exclude-filter support for rerun_failed_github_tests. **Platform & recording** (6 PRs): Enabled mcap compression in SDC, added lidar extrinsic check-in, fixed subsystem replay delta file inputs, and added JQ triggering message recording. **Tracking & perception** (4 PRs): Added IoU polygon utilities for object tracking, fixed single camera replacement bug, and fixed object_locator_metrics steady_clock underflow."
+      ]
     },
     {
       "id": "adk",
       "name": "ADK",
       "description": "Application Development Kit",
+      "merged_count": 49,
+      "open_count": 28,
+      "avg_days_to_merge": 10.2,
+      "median_days_to_merge": 2.0,
+      "summary": "ADK drove a major third-party dependency migration to bzlmod this period, cleaning up the monorepo build graph substantially. On the product side, the team shipped embedded hardware fixes (I2C, EEPROM), improved developer tooling with Chart Calibration UI improvements, and advanced MCAP recording capabilities. **Build Migration** (12 PRs) \u2014 migrated pybind, sqlite, curl, snappy, gRPC, and boringssl to bzlmod, cleaning up the WORKSPACE cascade. **Hardware/Embedded** (8 PRs) \u2014 fixed I2C write bugs, EEPROM write issues, decompand restructure, and added heartbeat enablement. **MCAP/Recording** (7 PRs) \u2014 removed redundant UpdateMetadata API from TopicReencoder, split mcap replay and record support. **Developer Tools** (8 PRs) \u2014 Chart Calibration UI split into separate apps, Epiviz warning for merged MCAPs without common frame index, and updated getting started guide for rebase workflows. **Transcoder** (4 PRs) \u2014 refactored mercury transcoder logic and increased map size.",
       "merged": [
         {
           "number": 11793,
@@ -4537,6 +4571,45 @@
       ],
       "open": [
         {
+          "number": 11838,
+          "title": "[ADK-4279] Provide thin aarch64 deb for VPU deployment of mcap_raw_processor",
+          "author": "amaharshi",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11838",
+          "labels": [
+            "prg:adk",
+            "devops"
+          ],
+          "additions": 91,
+          "deletions": 0,
+          "changed_files": 2
+        },
+        {
+          "number": 11833,
+          "title": "adk: Use xz compression in make_bundle.sh",
+          "author": "mattelsey-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11833",
+          "labels": [
+            "prg:adk"
+          ],
+          "additions": 1,
+          "deletions": 0,
+          "changed_files": 1
+        },
+        {
+          "number": 11832,
+          "title": "adk: Make frame mark more flexible [ROBOT-4201]",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11832",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter",
+            "prg:bumblebee"
+          ],
+          "additions": 73,
+          "deletions": 34,
+          "changed_files": 11
+        },
+        {
           "number": 11829,
           "title": "[ADK-4278] Fix flaky rcs_client_test by using OS-assigned ports",
           "author": "rickdynarski-brt",
@@ -4544,7 +4617,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 4,
           "deletions": 5,
           "changed_files": 1
@@ -4557,7 +4629,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 4104,
           "deletions": 0,
           "changed_files": 32
@@ -4570,8 +4641,7 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
-          "additions": 583,
+          "additions": 589,
           "deletions": 0,
           "changed_files": 9
         },
@@ -4583,7 +4653,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 25,
           "deletions": 0,
           "changed_files": 1
@@ -4596,7 +4665,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 12,
           "deletions": 4,
           "changed_files": 1
@@ -4609,7 +4677,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 874,
           "deletions": 25,
           "changed_files": 15
@@ -4622,7 +4689,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 1,
           "deletions": 1,
           "changed_files": 1
@@ -4639,7 +4705,6 @@
             "prg:jupiter",
             "shared"
           ],
-          "days_open": null,
           "additions": 392,
           "deletions": 840,
           "changed_files": 140
@@ -4652,7 +4717,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 1042,
           "deletions": 760,
           "changed_files": 26
@@ -4667,7 +4731,6 @@
             "devops",
             "third_party"
           ],
-          "days_open": null,
           "additions": 729,
           "deletions": 1891,
           "changed_files": 45
@@ -4681,7 +4744,6 @@
             "prg:adk",
             "devops"
           ],
-          "days_open": null,
           "additions": 9337,
           "deletions": 0,
           "changed_files": 84
@@ -4695,7 +4757,6 @@
             "prg:adk",
             "devops"
           ],
-          "days_open": null,
           "additions": 397,
           "deletions": 49,
           "changed_files": 16
@@ -4708,7 +4769,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 284,
           "deletions": 230,
           "changed_files": 1
@@ -4722,7 +4782,6 @@
             "prg:adk",
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 2107,
           "deletions": 21,
           "changed_files": 20
@@ -4736,7 +4795,6 @@
             "prg:adk",
             "prg:jupiter"
           ],
-          "days_open": null,
           "additions": 319,
           "deletions": 21,
           "changed_files": 7
@@ -4749,7 +4807,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 15,
           "deletions": 6,
           "changed_files": 1
@@ -4762,7 +4819,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 62,
           "deletions": 175,
           "changed_files": 12
@@ -4775,10 +4831,9 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
-          "additions": 316,
-          "deletions": 222,
-          "changed_files": 4
+          "additions": 13,
+          "deletions": 10,
+          "changed_files": 2
         },
         {
           "number": 11632,
@@ -4792,7 +4847,6 @@
             "devops",
             "third_party"
           ],
-          "days_open": null,
           "additions": 231,
           "deletions": 104,
           "changed_files": 29
@@ -4805,7 +4859,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 410,
           "deletions": 173,
           "changed_files": 6
@@ -4818,7 +4871,6 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 480,
           "deletions": 25,
           "changed_files": 9
@@ -4832,7 +4884,6 @@
             "prg:adk",
             "devops"
           ],
-          "days_open": null,
           "additions": 5121,
           "deletions": 1134,
           "changed_files": 8
@@ -4847,7 +4898,6 @@
             "prg:jupiter",
             "third_party"
           ],
-          "days_open": null,
           "additions": 281,
           "deletions": 873,
           "changed_files": 57
@@ -4862,7 +4912,6 @@
             "prg:jupiter",
             "devops"
           ],
-          "days_open": null,
           "additions": 2577,
           "deletions": 292,
           "changed_files": 23
@@ -4875,23 +4924,35 @@
           "labels": [
             "prg:adk"
           ],
-          "days_open": null,
           "additions": 147,
           "deletions": 1,
           "changed_files": 4
         }
-      ],
-      "merged_count": 49,
-      "open_count": 25,
-      "avg_days_to_merge": 10.2,
-      "median_days_to_merge": 2.0,
-      "summary": "ADK shipped improvements across five areas. **Epiviz & calibration UI** (8 PRs): Added warning for merged MCAPs without common frame index, rebuilt Chart Calibration UI as separate apps with 3D OpenGL coverage, memory optimizations, and added Jupiter implement VPU delta config. **Hardware interfaces** (6 PRs): Fixed I2C write and EEPROM write bugs, improved dogbone EEPROM handling, added SHA256 model engine file checks, and added large file streaming to autocal. **Bzlmod migration** (5 PRs): Migrated pybind, sqlite, curl, snappy, nlohmann_json, and opentelemetry-cpp to bzlmod as part of Bazel 8 readiness. **Direct-to-Host IoT** (3 PRs): Enabled VPU direct communication with JD AWS Host broker with production cert paths. **COLMAP & 3D** (3 PRs): Parallelized colmap verification/BA, added scale/threading knobs, and refactored cuda_correspondence_test."
+      ]
     },
     {
       "id": "robotech",
       "name": "Robotech",
       "description": "Robotics platform (BSP, VPU, AOS)",
+      "merged_count": 47,
+      "open_count": 21,
+      "avg_days_to_merge": 5.8,
+      "median_days_to_merge": 5.3,
+      "summary": "Robotech shipped BSP 3.2.1 across both VPU generations and made meaningful progress on memory optimization for the b-series platform. Key safety improvements include flash ratchet downgrade prevention and EFI major version validation. The team also reduced camera message frequencies to ease VPU2 resource pressure. **BSP Releases** (10 PRs) \u2014 shipped BSP 3.2.1 for VPU1 & VPU2, added EFI major version check to flash_vpu, prevented ratchet downgrade in flash_vpu2. **Memory Optimization** (4 PRs) \u2014 shrunk MqttEmulator and PduQueue memory usage for b-series. **MQTT/Messaging** (5 PRs) \u2014 bumped max MQTT MessagePayload size, tuned down VPU2 camera message frequencies. **Build/Tooling** (8 PRs) \u2014 converted generate_dir_file to Python, specified go_sdk version earlier, separated CI output_base locations. **AOS/Realtime** (6 PRs) \u2014 fixed SimulatedSender DoSend for realtime checks, cleaned up flatbuffer copies in capabilities modules.",
       "merged": [
+        {
+          "number": 11816,
+          "title": "shasta: Convert generate_dir_file to python",
+          "author": "brt-brennan-coslett",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11816",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 0.2,
+          "additions": 131,
+          "deletions": 164,
+          "changed_files": 4
+        },
         {
           "number": 11760,
           "title": "shasta: specify go_sdk version earlier\n",
@@ -4917,6 +4978,45 @@
           "additions": 2,
           "deletions": 3,
           "changed_files": 1
+        },
+        {
+          "number": 11734,
+          "title": "shasta: flash_vpu: add EFI major version check (#11467)",
+          "author": "brt-brennan-coslett",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11734",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 2.1,
+          "additions": 179,
+          "deletions": 0,
+          "changed_files": 2
+        },
+        {
+          "number": 11733,
+          "title": "shasta: flash_vpu2: prevent ratchet downgrade (#11466)",
+          "author": "brt-brennan-coslett",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11733",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 2.0,
+          "additions": 208,
+          "deletions": 9,
+          "changed_files": 4
+        },
+        {
+          "number": 11659,
+          "title": "shasta: Bump max MQTT MessagePayload size (#11496)",
+          "author": "jameskuszmaul-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11659",
+          "labels": [
+            "prg:shasta"
+          ],
+          "days_open": 3.3,
+          "additions": 14,
+          "deletions": 1,
+          "changed_files": 2
         },
         {
           "number": 11638,
@@ -5454,6 +5554,18 @@
       ],
       "open": [
         {
+          "number": 11837,
+          "title": "shasta: update bsp release notes script to support jp6",
+          "author": "tamdo-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11837",
+          "labels": [
+            "prg:shasta"
+          ],
+          "additions": 42,
+          "deletions": 17,
+          "changed_files": 2
+        },
+        {
           "number": 11828,
           "title": "shasta: add jp6 red flag model",
           "author": "tamdo-brt",
@@ -5461,7 +5573,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 10,
           "deletions": 2,
           "changed_files": 2
@@ -5475,7 +5586,6 @@
             "prg:shasta",
             "prg:bumblebee"
           ],
-          "days_open": null,
           "additions": 661,
           "deletions": 36,
           "changed_files": 20
@@ -5488,7 +5598,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 129,
           "deletions": 65,
           "changed_files": 4
@@ -5501,7 +5610,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 62,
           "deletions": 13,
           "changed_files": 5
@@ -5514,23 +5622,9 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 10,
           "deletions": 1,
           "changed_files": 2
-        },
-        {
-          "number": 11816,
-          "title": "shasta: Convert generate_dir_file to python",
-          "author": "brt-brennan-coslett",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11816",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 131,
-          "deletions": 164,
-          "changed_files": 4
         },
         {
           "number": 11791,
@@ -5540,7 +5634,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 149,
           "deletions": 40,
           "changed_files": 2
@@ -5553,7 +5646,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 269,
           "deletions": 14,
           "changed_files": 4
@@ -5567,7 +5659,6 @@
             "devops",
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 26,
           "deletions": 14,
           "changed_files": 9
@@ -5580,7 +5671,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 9,
           "deletions": 154,
           "changed_files": 4
@@ -5593,7 +5683,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 4,
           "deletions": 10,
           "changed_files": 1
@@ -5606,36 +5695,9 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 26,
           "deletions": 2,
           "changed_files": 2
-        },
-        {
-          "number": 11734,
-          "title": "shasta: flash_vpu: add EFI major version check (#11467)",
-          "author": "brt-brennan-coslett",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11734",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 179,
-          "deletions": 0,
-          "changed_files": 2
-        },
-        {
-          "number": 11733,
-          "title": "shasta: flash_vpu2: prevent ratchet downgrade (#11466)",
-          "author": "brt-brennan-coslett",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11733",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 208,
-          "deletions": 9,
-          "changed_files": 4
         },
         {
           "number": 11692,
@@ -5645,7 +5707,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 0,
           "deletions": 1,
           "changed_files": 1
@@ -5658,23 +5719,9 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 9,
           "deletions": 10,
           "changed_files": 2
-        },
-        {
-          "number": 11659,
-          "title": "shasta: Bump max MQTT MessagePayload size (#11496)",
-          "author": "jameskuszmaul-brt",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11659",
-          "labels": [
-            "prg:shasta"
-          ],
-          "days_open": null,
-          "additions": 22,
-          "deletions": 4,
-          "changed_files": 5
         },
         {
           "number": 11645,
@@ -5684,7 +5731,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 192,
           "deletions": 0,
           "changed_files": 6
@@ -5697,7 +5743,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 119,
           "deletions": 29,
           "changed_files": 10
@@ -5710,7 +5755,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 764,
           "deletions": 26,
           "changed_files": 16
@@ -5723,7 +5767,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 1,
           "deletions": 0,
           "changed_files": 1
@@ -5736,7 +5779,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 6,
           "deletions": 3,
           "changed_files": 1
@@ -5749,7 +5791,6 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 103,
           "deletions": 11,
           "changed_files": 3
@@ -5762,22 +5803,21 @@
           "labels": [
             "prg:shasta"
           ],
-          "days_open": null,
           "additions": 32,
           "deletions": 7,
           "changed_files": 1
         }
-      ],
-      "merged_count": 43,
-      "open_count": 24,
-      "avg_days_to_merge": 6.2,
-      "median_days_to_merge": 5.3,
-      "summary": "Robotech delivered across three main streams. **BSP & VPU flashing** (8 PRs): Shipped BSP 3.2.1 for VPU1 and VPU2, added EFI major version check and ratchet downgrade prevention to flash tools, added rev7 VPU1 support, and switched to dev-signed BSP when available. **Phelps MY27 configurations** (14 PRs): Landed the full matrix of Phelps MY27 SOP configs across 30k/36k/40k row widths and 15e/15i/20e/20i spacing variants. **B-series & AOS** (7 PRs): Shrunk MqttEmulator and PduQueue memory usage for b-series, tuned VPU2 camera message frequencies, bumped max MQTT payload size, cleaned up flatbuffer copies, and fixed realtime checks in SimulatedSender. **JetPack 6 prep** (4 open PRs): Active work on JP6 rootfs config, TensorRT/inference support, model conversion, and L4T version detection \u2014 not yet merged."
+      ]
     },
     {
       "id": "unlabeled",
       "name": "Unlabeled",
-      "description": "No program label",
+      "description": "No prg: label",
+      "merged_count": 29,
+      "open_count": 28,
+      "avg_days_to_merge": 4.0,
+      "median_days_to_merge": 0.9,
+      "summary": "Cross-cutting infrastructure work dominated this period, primarily the monorepo-wide migration of third-party dependencies from WORKSPACE to bzlmod. This foundational effort touches every team and will simplify builds going forward. **DevOps/Bzlmod** (15 PRs) \u2014 major migration effort moving glog, glfw, opengl, flatbuffers, and other deps to bzlmod while dropping unused workspace dependencies. **Build Infrastructure** (6 PRs) \u2014 updated crosstool wrapper for Python 3.13, fixed platform_suffix for vpu2_jp5, added warm-cache index.json schema. **Tooling** (4 PRs) \u2014 fixed vpu_exec working directory for remote execution, fixed profiling tool paths in vpu_nsight/vpu_nsys.",
       "merged": [
         {
           "number": 11786,
@@ -6160,12 +6200,12 @@
           "author": "andrewring",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11830",
           "labels": [
-            "devops"
+            "devops",
+            "shared"
           ],
-          "days_open": null,
-          "additions": 1816,
-          "deletions": 69,
-          "changed_files": 9
+          "additions": 1855,
+          "deletions": 71,
+          "changed_files": 10
         },
         {
           "number": 11814,
@@ -6175,7 +6215,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 29,
           "deletions": 1,
           "changed_files": 2
@@ -6186,7 +6225,6 @@
           "author": "cesarcordero25",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11807",
           "labels": [],
-          "days_open": null,
           "additions": 626,
           "deletions": 0,
           "changed_files": 9
@@ -6199,7 +6237,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 1,
           "deletions": 1,
           "changed_files": 1
@@ -6213,7 +6250,6 @@
             "devops",
             "third_party"
           ],
-          "days_open": null,
           "additions": 43,
           "deletions": 86,
           "changed_files": 14
@@ -6226,7 +6262,6 @@
           "labels": [
             "third_party"
           ],
-          "days_open": null,
           "additions": 279,
           "deletions": 1178,
           "changed_files": 19
@@ -6239,7 +6274,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 26,
           "deletions": 8,
           "changed_files": 1
@@ -6252,7 +6286,6 @@
           "labels": [
             "third_party"
           ],
-          "days_open": null,
           "additions": 7,
           "deletions": 236,
           "changed_files": 2
@@ -6265,7 +6298,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 545,
           "deletions": 69,
           "changed_files": 4
@@ -6276,7 +6308,6 @@
           "author": "brt-brennan-coslett",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11732",
           "labels": [],
-          "days_open": null,
           "additions": 17,
           "deletions": 17,
           "changed_files": 2
@@ -6287,7 +6318,6 @@
           "author": "DanielMovsesyanBRT",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11731",
           "labels": [],
-          "days_open": null,
           "additions": 226,
           "deletions": 135,
           "changed_files": 21
@@ -6298,7 +6328,6 @@
           "author": "ziyang-brt",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11705",
           "labels": [],
-          "days_open": null,
           "additions": 78,
           "deletions": 14,
           "changed_files": 2
@@ -6311,7 +6340,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 1,
           "deletions": 8,
           "changed_files": 1
@@ -6324,7 +6352,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 2236,
           "deletions": 62,
           "changed_files": 8
@@ -6337,7 +6364,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 165,
           "deletions": 132,
           "changed_files": 2
@@ -6348,7 +6374,6 @@
           "author": "ericfaehnrich-brt",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11679",
           "labels": [],
-          "days_open": null,
           "additions": 4347,
           "deletions": 576,
           "changed_files": 127
@@ -6361,7 +6386,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 2,
           "deletions": 1,
           "changed_files": 1
@@ -6374,7 +6398,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 2533,
           "deletions": 61,
           "changed_files": 10
@@ -6387,7 +6410,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 132,
           "deletions": 75,
           "changed_files": 3
@@ -6398,7 +6420,6 @@
           "author": "pallavi-brt",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11572",
           "labels": [],
-          "days_open": null,
           "additions": 6,
           "deletions": 4,
           "changed_files": 4
@@ -6409,7 +6430,6 @@
           "author": "pallavi-brt",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11564",
           "labels": [],
-          "days_open": null,
           "additions": 2579,
           "deletions": 7,
           "changed_files": 11
@@ -6420,7 +6440,6 @@
           "author": "pallavi-brt",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11563",
           "labels": [],
-          "days_open": null,
           "additions": 2396,
           "deletions": 2,
           "changed_files": 9
@@ -6431,7 +6450,6 @@
           "author": "pallavi-brt",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11562",
           "labels": [],
-          "days_open": null,
           "additions": 2011,
           "deletions": 2,
           "changed_files": 9
@@ -6442,7 +6460,6 @@
           "author": "pallavi-brt",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11561",
           "labels": [],
-          "days_open": null,
           "additions": 2022,
           "deletions": 3,
           "changed_files": 9
@@ -6456,7 +6473,6 @@
             "devops",
             "third_party"
           ],
-          "days_open": null,
           "additions": 1368,
           "deletions": 28,
           "changed_files": 38
@@ -6469,7 +6485,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 958,
           "deletions": 0,
           "changed_files": 1
@@ -6482,7 +6497,6 @@
           "labels": [
             "devops"
           ],
-          "days_open": null,
           "additions": 8,
           "deletions": 2,
           "changed_files": 1
@@ -6493,22 +6507,21 @@
           "author": "chambliss567",
           "url": "https://github.com/BlueRiverTechnology/brt/pull/11472",
           "labels": [],
-          "days_open": null,
           "additions": 7675,
           "deletions": 1270,
           "changed_files": 91
         }
-      ],
-      "merged_count": 29,
-      "open_count": 28,
-      "avg_days_to_merge": 4.0,
-      "median_days_to_merge": 0.9,
-      "summary": "Cross-cutting infrastructure dominated unlabeled PRs. **Bzlmod migration** (14 PRs): Massive Bazel modernization effort by perfinion \u2014 migrated gRPC, boringssl, protobuf, glog, gtest, gflags, libjpeg-turbo, libpng, zlib, bazel_latex, rules_m4/bison/flex, glfw, and OpenGL to bzlmod, plus removed dead workspace deps. **DevOps tooling** (5 PRs): Improved vpu_exec remote execution, fixed PR approval dismissal for empty commits, updated crosstool wrapper for python3.13, and added warm-cache index.json schema. **Supply chain security** (2 PRs): Disabled compromised PyPI lightning package after supply chain attack detection."
+      ]
     },
     {
       "id": "dune",
       "name": "Dune",
       "description": "Autonomous operation",
+      "merged_count": 25,
+      "open_count": 15,
+      "avg_days_to_merge": 3.2,
+      "median_days_to_merge": 1.0,
+      "summary": "Dune made substantial progress on replay infrastructure, getting subsystem replay working with autocalibration and EMU replay producing metrics to S3. The team also refined autonomy logic around velocity buffering and geojson handling. **Replay Infrastructure** (7 PRs) \u2014 got dune subsystem replay working with autocalibration, EMU replay with metrics/S3, and splitted mcap replay+record support. **Autonomy Logic** (5 PRs) \u2014 extended velocity buffer for ego and target stops, fixed geojson 3D offset, removed unnecessary atomic in sparkai_proxy. **Recording/Data** (4 PRs) \u2014 set event mcap chunking to 45s, added VADC limit topics to recorder. **CI/Build** (3 PRs) \u2014 improved GHA to remove explicit declarations, synced dav display 0.1.13-2.",
       "merged": [
         {
           "number": 11809,
@@ -6860,7 +6873,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 134,
           "deletions": 27,
           "changed_files": 6
@@ -6877,7 +6889,6 @@
             "prg:jupiter",
             "shared"
           ],
-          "days_open": null,
           "additions": 392,
           "deletions": 840,
           "changed_files": 140
@@ -6890,7 +6901,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 46,
           "deletions": 40,
           "changed_files": 5
@@ -6903,7 +6913,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 54,
           "deletions": 21,
           "changed_files": 1
@@ -6917,7 +6926,6 @@
             "prg:dune",
             "devops"
           ],
-          "days_open": null,
           "additions": 257,
           "deletions": 5,
           "changed_files": 5
@@ -6930,7 +6938,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 68,
           "deletions": 67,
           "changed_files": 1
@@ -6943,7 +6950,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 642,
           "deletions": 1289,
           "changed_files": 23
@@ -6960,7 +6966,6 @@
             "devops",
             "third_party"
           ],
-          "days_open": null,
           "additions": 231,
           "deletions": 104,
           "changed_files": 29
@@ -6973,7 +6978,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 721,
           "deletions": 482,
           "changed_files": 28
@@ -6986,7 +6990,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 629,
           "deletions": 1278,
           "changed_files": 22
@@ -6999,7 +7002,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 212,
           "deletions": 71,
           "changed_files": 11
@@ -7012,7 +7014,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 1337,
           "deletions": 1,
           "changed_files": 7
@@ -7025,7 +7026,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 639,
           "deletions": 364,
           "changed_files": 16
@@ -7038,7 +7038,6 @@
           "labels": [
             "prg:dune"
           ],
-          "days_open": null,
           "additions": 152,
           "deletions": 12,
           "changed_files": 6
@@ -7053,22 +7052,21 @@
             "prg:mercury",
             "devops"
           ],
-          "days_open": null,
           "additions": 626,
           "deletions": 715,
           "changed_files": 45
         }
-      ],
-      "merged_count": 25,
-      "open_count": 15,
-      "avg_days_to_merge": 3.2,
-      "median_days_to_merge": 1.0,
-      "summary": "Dune progressed on autonomy and simulation. **Replay & metrics** (7 PRs): Major replay overhaul \u2014 EMU replay with metrics/S3 upload, split mcap record/replay, auto-generated experiences, and subsystem replay autocalibration. **Safety & motion** (4 PRs): Extended velocity buffer for ego and target stops, added VADC limit topics to recorder, and reworked deceleration message timing. **Simulation** (3 PRs): Reworked sim launching, improved GHA to remove explicit declarations, and sped up safety_bubble/dds_tf2 tests with virtual clocks. **DAV display** (2 PRs): Synced DAV display 0.1.13-2 and added collision checker parameter initialization."
+      ]
     },
     {
       "id": "mercury",
       "name": "Mercury",
       "description": "Localization / mapping",
+      "merged_count": 17,
+      "open_count": 5,
+      "avg_days_to_merge": 7.1,
+      "median_days_to_merge": 1.3,
+      "summary": "Mercury advanced visual odometry metrics and ported them to ReSim for automated evaluation. The team also implemented the VADC protocol and began gamma data collection work. **Visual Odometry** (4 PRs) \u2014 fixed extrinsics batch optimizer, ported VO metrics to ReSim, and added more stats to resim with fixed plots. **VADC Protocol** (3 PRs) \u2014 implemented VADC protocol and added explicit cleanup of singletons holding PubSubModule references. **Localization** (3 PRs) \u2014 localization fixes and map test assertion improvements. **Data Collection** (2 PRs) \u2014 gamma data collection work and simplified OpenImu publishing logic.",
       "merged": [
         {
           "number": 11758,
@@ -7327,7 +7325,6 @@
             "prg:jupiter",
             "shared"
           ],
-          "days_open": null,
           "additions": 392,
           "deletions": 840,
           "changed_files": 140
@@ -7342,7 +7339,6 @@
             "devops",
             "shared"
           ],
-          "days_open": null,
           "additions": 859,
           "deletions": 72,
           "changed_files": 29
@@ -7355,7 +7351,6 @@
           "labels": [
             "prg:mercury"
           ],
-          "days_open": null,
           "additions": 2037,
           "deletions": 1258,
           "changed_files": 14
@@ -7369,7 +7364,6 @@
             "prg:mercury",
             "shared"
           ],
-          "days_open": null,
           "additions": 413,
           "deletions": 44,
           "changed_files": 10
@@ -7384,111 +7378,21 @@
             "prg:mercury",
             "devops"
           ],
-          "days_open": null,
           "additions": 626,
           "deletions": 715,
           "changed_files": 45
         }
-      ],
-      "merged_count": 17,
-      "open_count": 5,
-      "avg_days_to_merge": 7.1,
-      "median_days_to_merge": 1.3,
-      "summary": "Mercury made progress on localization and data collection. **Visual odometry & localization** (5 PRs): Fixed VO extrinsics batch optimizer, various localization fixes, ported VO metrics to resim, and added a new shared universal wheel odometer. **VADC protocol** (2 PRs): Implemented VADC protocol and refactored turf-autonomy Domain Participant changes. **Data collection & resim** (4 PRs): Gamma data collection work, added more resim stats with plot fixes, map test assertion handling, and singleton cleanup for PubSubModule references. **Infrastructure** (2 PRs): Pre-commit script for ENABLE_CUDA ifdef migration and bzlmod dependency updates."
-    },
-    {
-      "id": "bumblebee",
-      "name": "Bumblebee",
-      "description": "Harvest automation",
-      "merged": [
-        {
-          "number": 11647,
-          "title": "devops: remove cuda-11.4/include from clang toolchain -isystem path",
-          "author": "rickdynarski-brt",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11647",
-          "labels": [
-            "prg:adk",
-            "devops",
-            "third_party",
-            "prg:bumblebee"
-          ],
-          "days_open": 2.6,
-          "additions": 13,
-          "deletions": 13,
-          "changed_files": 5
-        },
-        {
-          "number": 8546,
-          "title": "adk: Switch from #ifdef ENABLE_CUDA to #if ENABLE_CUDA",
-          "author": "anivegesana",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/8546",
-          "labels": [
-            "prg:adk",
-            "prg:mercury",
-            "prg:jupiter",
-            "third_party",
-            "prg:bumblebee"
-          ],
-          "days_open": 89.6,
-          "additions": 273,
-          "deletions": 273,
-          "changed_files": 124
-        }
-      ],
-      "open": [
-        {
-          "number": 11823,
-          "title": "shasta: add JP6 TensorRT/inference support and JP5 vs JP6 L4T version detection",
-          "author": "tamdo-brt",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11823",
-          "labels": [
-            "prg:shasta",
-            "prg:bumblebee"
-          ],
-          "days_open": null,
-          "additions": 661,
-          "deletions": 36,
-          "changed_files": 20
-        },
-        {
-          "number": 11779,
-          "title": "shasta: Fix trailing newlines in C/C++ files",
-          "author": "philsc",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11779",
-          "labels": [
-            "prg:shasta",
-            "prg:bumblebee"
-          ],
-          "days_open": null,
-          "additions": 123,
-          "deletions": 170,
-          "changed_files": 147
-        },
-        {
-          "number": 11609,
-          "title": "shasta: update to rules_go and bazel_gazelle",
-          "author": "brt-alexei",
-          "url": "https://github.com/BlueRiverTechnology/brt/pull/11609",
-          "labels": [
-            "prg:shasta",
-            "prg:bumblebee"
-          ],
-          "days_open": null,
-          "additions": 454,
-          "deletions": 450,
-          "changed_files": 246
-        }
-      ],
-      "merged_count": 2,
-      "open_count": 3,
-      "avg_days_to_merge": 46.1,
-      "median_days_to_merge": 46.1,
-      "summary": "Bumblebee had minimal activity: cross-cutting CUDA ifdef migration and devops clang toolchain cleanup. Most PRs are shared with other teams."
+      ]
     },
     {
       "id": "mesa",
       "name": "Mesa",
       "description": "Mesa",
+      "merged_count": 3,
+      "open_count": 1,
+      "avg_days_to_merge": 4.9,
+      "median_days_to_merge": 3.9,
+      "summary": "3 merged and 1 open PRs this period. Work focused on factoring the compute module out of Arrow and adding schema/data fields to rti_dds_to_arrow_reader with chunking support.",
       "merged": [
         {
           "number": 11753,
@@ -7549,22 +7453,121 @@
           "labels": [
             "prg:mesa"
           ],
-          "days_open": null,
           "additions": 381,
           "deletions": 16,
           "changed_files": 6
         }
+      ]
+    },
+    {
+      "id": "bumblebee",
+      "name": "Bumblebee",
+      "description": "Harvest automation",
+      "merged_count": 2,
+      "open_count": 4,
+      "avg_days_to_merge": 46.1,
+      "median_days_to_merge": 46.1,
+      "summary": "2 merged and 4 open PRs this period. Infrastructure changes including CUDA build flag migration from #ifdef to #if ENABLE_CUDA and clang toolchain path cleanup.",
+      "merged": [
+        {
+          "number": 11647,
+          "title": "devops: remove cuda-11.4/include from clang toolchain -isystem path",
+          "author": "rickdynarski-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11647",
+          "labels": [
+            "prg:adk",
+            "devops",
+            "third_party",
+            "prg:bumblebee"
+          ],
+          "days_open": 2.6,
+          "additions": 13,
+          "deletions": 13,
+          "changed_files": 5
+        },
+        {
+          "number": 8546,
+          "title": "adk: Switch from #ifdef ENABLE_CUDA to #if ENABLE_CUDA",
+          "author": "anivegesana",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/8546",
+          "labels": [
+            "prg:adk",
+            "prg:mercury",
+            "prg:jupiter",
+            "third_party",
+            "prg:bumblebee"
+          ],
+          "days_open": 89.6,
+          "additions": 273,
+          "deletions": 273,
+          "changed_files": 124
+        }
       ],
-      "merged_count": 3,
-      "open_count": 1,
-      "avg_days_to_merge": 4.9,
-      "median_days_to_merge": 3.9,
-      "summary": "Mesa landed Arrow chunking support with schema/data fields for rti_dds_to_arrow_reader and factored the compute module out of Arrow. Python MCAP tools reimplementation is in review."
+      "open": [
+        {
+          "number": 11832,
+          "title": "adk: Make frame mark more flexible [ROBOT-4201]",
+          "author": "brt-junwuzhang",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11832",
+          "labels": [
+            "prg:adk",
+            "prg:jupiter",
+            "prg:bumblebee"
+          ],
+          "additions": 73,
+          "deletions": 34,
+          "changed_files": 11
+        },
+        {
+          "number": 11823,
+          "title": "shasta: add JP6 TensorRT/inference support and JP5 vs JP6 L4T version detection",
+          "author": "tamdo-brt",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11823",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "additions": 661,
+          "deletions": 36,
+          "changed_files": 20
+        },
+        {
+          "number": 11779,
+          "title": "shasta: Fix trailing newlines in C/C++ files",
+          "author": "philsc",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11779",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "additions": 123,
+          "deletions": 170,
+          "changed_files": 147
+        },
+        {
+          "number": 11609,
+          "title": "shasta: update to rules_go and bazel_gazelle",
+          "author": "brt-alexei",
+          "url": "https://github.com/BlueRiverTechnology/brt/pull/11609",
+          "labels": [
+            "prg:shasta",
+            "prg:bumblebee"
+          ],
+          "additions": 454,
+          "deletions": 450,
+          "changed_files": 246
+        }
+      ]
     },
     {
       "id": "athena",
       "name": "Athena",
       "description": "Athena",
+      "merged_count": 1,
+      "open_count": 0,
+      "avg_days_to_merge": 4.8,
+      "median_days_to_merge": 4.8,
+      "summary": "1 merged PR this period \u2014 initial configuration setup for the Athena program.",
       "merged": [
         {
           "number": 11603,
@@ -7581,12 +7584,7 @@
           "changed_files": 17
         }
       ],
-      "open": [],
-      "merged_count": 1,
-      "open_count": 0,
-      "avg_days_to_merge": 4.8,
-      "median_days_to_merge": 4.8,
-      "summary": "Athena merged its initial configuration PR, establishing the program's foundational setup in the monorepo."
+      "open": []
     }
   ]
 }
