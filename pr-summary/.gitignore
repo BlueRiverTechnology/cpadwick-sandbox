@@ -1,1 +1,4 @@
+node_modules/
+dist/
 reports/pipeline-intermediate.json
+*.log
